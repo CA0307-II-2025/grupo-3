@@ -2,20 +2,20 @@
 
 ## 🎯  Objetivo del Sprint:
 
- _Declarar la meta del sprint en 1-2 frases (ej: "Tener datos limpios y un análisis descriptivo inicial completado")._
+ Establecer la infraestructura básica del proyecto, incluyendo el entorno de desarrollo reproducible, la estructura inicial del repositorio, la carga y limpieza preliminar de los datos, y los primeros avances en el marco teórico y metodológico del estudio científico.
 
 ## 😃  Historias de usuario
 
 - HU# - "Título de la Historia" (Estimación: Y pts) – *Criterios de aceptación confirmados.*
 - HU# - ...
+- HU#4 – “Definir el marco metodológico y estructurar el repositorio científico” (Estimación: 5 pts) – Criterios de aceptación confirmados.
 *(Listar las historias del backlog que el equipo se compromete a completar este sprint, con sus IDs y breve nombre.)*
 
 
 
 ## 🔜  Plan de alto nivel:
-- *Semana 1:* _Tareas principales (ej: Ingesta de datos, Setup entorno CI)._
-- *Semana 2:* _Tareas principales (ej: Implementar modelo y validar, preparar demo)._
-
+- *Semana 1:* Investigación bibliográfica, selección de la base de datos, estudio de métodos estadisticos del curso CA0307, Proponer idea general y objetivos del proyecto.
+- *Semana 2:* Revisión de literatura sobre préstamos estudiantiles y cópulas, redactar la introducción del reporte científico, realizar análisis exploratorio de los datos, desarrollar módulo inicial de limpieza de datos y definir el marco metodológico del estudio
 
 ## 🥇  Criterios de aceptación del Sprint:
 - [ ] _Todas las historias listadas completadas y aceptadas por el profesor._
@@ -23,9 +23,11 @@
 
 
 ## 📌  Asignación de tareas inicial
-- *Persona A:* Historia 1
-- *Persona B:* Historia 2
-- *Persona C:* documentación
+
+- *Jeikel:* Historia 1 – Revisión de literatura sobre préstamos estudiantiles y cópulas
+- *Gabriel:* Historia 2 – Redacción de la primera sección del reporte científico (introducción y motivación)
+- *Andy:* Historia 3 – Análisis exploratorio inicial y desarrollo preliminar de módulos de limpieza y modelado
+- *Diego:* Historia 4 – Definición del marco metodológico y estructura del repositorio científico
 
 ## 🚫 Posibles bloqueos o impedimentos conocidos
 
@@ -45,31 +47,53 @@ El formato para cada estudiante debe ser
 
 
 
-##  Fecha: YYYY-MM-DD
+##  Fecha: 2025-08-20
 
-### Estudiante A:
+### Jeikel:
 - **¿Qué hice ayer?**:
 - **¿Qué haré hoy?**:
 - **¿Hay algo que me está bloqueando?**:
 
-### Estudiante B:
+### Gabriel:
 - **¿Qué hice ayer?**:
 - **¿Qué haré hoy?**:
 - **¿Hay algo que me está bloqueando?**:
 
-### Estudiante C:
+### Andy:
 - **¿Qué hice ayer?**:
 - **¿Qué haré hoy?**:
 - **¿Hay algo que me está bloqueando?**:
 
-### Estudiante D:
+### Diego:
+- **¿Qué hice ayer?**: Consultarle al profe sobre la propuesta del proyecto, delegar tareas una vez recibida la recomendación y acompañamiento del profesor, entender de manera adecauda la metodología SCRUM y sus distintos elementos
+- **¿Qué haré hoy?**: Realizaré mi tarea y daré seguimiento al avance de los compañeros a lo largo del día
+- **¿Hay algo que me está bloqueando?**: Por el momento no, el tiempo puede ser, pero con buena organización se ha podido.
+
+##  Fecha: 2025-08-21
+
+### Jeikel:
+- **¿Qué hice ayer?**:
+- **¿Qué haré hoy?**:
+- **¿Hay algo que me está bloqueando?**:
+
+### Gabriel:
+- **¿Qué hice ayer?**:
+- **¿Qué haré hoy?**:
+- **¿Hay algo que me está bloqueando?**:
+
+### Andy:
+- **¿Qué hice ayer?**:
+- **¿Qué haré hoy?**:
+- **¿Hay algo que me está bloqueando?**:
+
+### Diego:
 - **¿Qué hice ayer?**:
 - **¿Qué haré hoy?**:
 - **¿Hay algo que me está bloqueando?**:
 
 
 
-# 🔍   Revisión en clase (Fecha: YYYY-MM-DD)
+# 🔍   Revisión en clase (Fecha: 2025-08-22)
 
 
 
