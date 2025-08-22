@@ -7,10 +7,9 @@ Establecer la infraestructura básica del proyecto, incluyendo el entorno de des
 ## 😃 Historias de usuario
 
 -   HU# - "Título de la Historia" (Estimación: Y pts) – *Criterios de aceptación confirmados.*
--   HU# - ...
+-   HU#2 - "Redacción de la introducción del reporte científico" (Estimación: 5 pts) – Criterios de aceptación confirmados.
 -   HU#3 - "Análisis inicial y módulos de limpieza" (Estimación: 5 pts) - *Script de limpieza, script EDA, visualización resumen (EDA.ipynb)*
--   HU#4 – “Definir el marco metodológico y estructurar el repositorio científico” (Estimación: 5 pts) – Criterios de aceptación confirmados. *(Listar las historias del backlog que el equipo se compromete a completar este sprint, con sus IDs y breve nombre.)*
-
+-   HU#4 – “Definir el marco metodológico y estructurar el repositorio científico” (Estimación: 5 pts) – Criterios de aceptación confirmados.
 ## 🔜 Plan de alto nivel:
 
 -   *Semana 1:* Investigación bibliográfica, selección de la base de datos, estudio de métodos estadisticos del curso CA0307, Proponer idea general y objetivos del proyecto.
@@ -51,9 +50,9 @@ El formato para cada estudiante debe ser
 
 ### Gabriel:
 
--   **¿Qué hice ayer?**:
--   **¿Qué haré hoy?**:
--   **¿Hay algo que me está bloqueando?**:
+-   **¿Qué hice ayer?**: Investigación sobre el tema
+-   **¿Qué haré hoy?**: Creación concreta de la introducción y la motivación junto con los objetivos
+-   **¿Hay algo que me está bloqueando?**: la adaptación a este nuevo formato.
 
 ### Andy:
 
@@ -72,25 +71,25 @@ El formato para cada estudiante debe ser
 ### Jeikel:
 
 -   **¿Qué hice ayer?**:
--   **¿Qué haré hoy?**:
+-   **¿Qué haré hoy?**: revisión general junto a compañeros.
 -   **¿Hay algo que me está bloqueando?**:
 
 ### Gabriel:
 
--   **¿Qué hice ayer?**:
--   **¿Qué haré hoy?**:
--   **¿Hay algo que me está bloqueando?**:
+-   **¿Qué hice ayer?**: Creación concreta de la introducción y la motivación junto con los objetivos
+-   **¿Qué haré hoy?**: revisión general junto a compañeros.
+-   **¿Hay algo que me está bloqueando?**: la adaptación a este formato
 
 ### Andy:
 
 -   **¿Qué hice ayer?**: Investigar acerca del EDA, preparar ambiente de programación..
--   **¿Qué haré hoy?**: Programar la limpieza de los datos y el EDA.
+-   **¿Qué haré hoy?**: Programar la limpieza de los datos y el EDA y revisión general junto a compañeros.
 -   **¿Hay algo que me está bloqueando?**: No.
 
 ### Diego:
 
 -   **¿Qué hice ayer?**:
--   **¿Qué haré hoy?**:
+-   **¿Qué haré hoy?**: revisión general junto a compañeros.
 -   **¿Hay algo que me está bloqueando?**:
 
 # 🔍 Revisión en clase (Fecha: 2025-08-22)
