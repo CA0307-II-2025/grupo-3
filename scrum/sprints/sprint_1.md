@@ -44,9 +44,9 @@ El formato para cada estudiante debe ser
 
 ### Jeikel:
 
--   **¿Qué hice ayer?**:
--   **¿Qué haré hoy?**:
--   **¿Hay algo que me está bloqueando?**:
+-   **¿Qué hice ayer?**: Revisé la literatura sobre la aplicación de cópulas en contextos financieros.
+-   **¿Qué haré hoy?**: Identificar vacíos en la literatura
+-   **¿Hay algo que me está bloqueando?**: Cómo seleccionar la cópula adecuada para diferentes tipos de variables.
 
 ### Gabriel:
 
@@ -70,9 +70,9 @@ El formato para cada estudiante debe ser
 
 ### Jeikel:
 
--   **¿Qué hice ayer?**:
+-   **¿Qué hice ayer?**: Revisé artículos que aplican cópulas en contextos financieros, para entender cómo se modela la dependencia entre variables.
 -   **¿Qué haré hoy?**: revisión general junto a compañeros.
--   **¿Hay algo que me está bloqueando?**:
+-   **¿Hay algo que me está bloqueando?**: Me genera duda cómo trasladar los métodos financieros de créditos corporativos o bancarios a préstamos estudiantiles
 
 ### Gabriel:
 
