@@ -24,13 +24,24 @@ class LectorFondosFFEL:
         return self.df
 
     def aplanar_columnas(self, separador="_"):
-        """Convierte columnas con múltiples niveles en nombres planos."""
+        """Convierte columnas MultiIndex en nombres planos, ignorando 'Unnamed'."""
         if isinstance(self.df.columns, pd.MultiIndex):
+
+            def limpio(x: object) -> str:
+                s = str(x).strip()
+                return "" if (s == "" or s.lower().startswith("unnamed")) else s
+
             self.df.columns = [
                 separador.join(
-                    [str(level).strip() for level in col if str(level).strip() != ""]
+                    [lvl for lvl in (limpio(level) for level in col) if lvl != ""]
                 )
                 for col in self.df.columns
+            ]
+        else:
+            # Si algunas columnas simples venían como 'Unnamed: 0'
+            self.df.columns = [
+                "" if (str(c).lower().startswith("unnamed")) else str(c)
+                for c in self.df.columns
             ]
         return self.df
 
@@ -52,10 +63,33 @@ class LectorFondosFFEL:
                 pass
         return self.df
 
+    def eliminar_filas_por_na(self, umbral=0.5):
+        """
+        Elimina filas que tengan un porcentaje de valores NA superior al umbral.
+
+        Parámetros:
+        - umbral: float, entre 0 y 1.
+        Ejemplo: umbral=0.5 elimina filas con más del 50% de valores NA.
+
+        Retorna:
+        - DataFrame sin las filas eliminadas.
+        """
+        if self.df is None:
+            raise ValueError("No hay DataFrame cargado. Use cargar_datos primero.")
+
+        # Calcula el porcentaje de NAs por fila
+        porcentaje_na = self.df.isna().mean(axis=1)
+
+        # Filtra filas donde el porcentaje de NAs sea menor o igual al umbral
+        self.df = self.df.loc[porcentaje_na <= umbral].copy()
+
+        return self.df
+
     def cargar_y_limpiar(self):
         """Proceso completo de carga y limpieza."""
         self.cargar_datos()
         self.aplanar_columnas()
+        self.eliminar_filas_por_na()
         self.limpiar_datos()
         self.convertir_numericos()
         return self.df
