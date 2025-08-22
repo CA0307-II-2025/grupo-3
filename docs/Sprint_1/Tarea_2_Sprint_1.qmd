@@ -20,7 +20,10 @@ format:
     highlight-style: github
     title-block-banner-meta-font-size: 1.5em
     title-block-banner-divider: true
+  pdf:
+    documentclass: article
 lang: es
+bibliography: referencias.bib
 ---
 
 ## Introducción
