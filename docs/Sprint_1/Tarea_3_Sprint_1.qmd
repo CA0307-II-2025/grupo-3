@@ -11,26 +11,88 @@ library(reticulate)
 
 
 ```{python}
+import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import seaborn as sns
 ```
 
 ```{python}
-ruta = "C:/Users/Roberto/Documents/repos/grupo-3/data/clean/dashboard_2010_clean.csv"
+ruta = "../../data/clean/dashboard_2010_clean.csv"
 datos = pd.read_csv(ruta)
+cambios = {
+  "FOREIGN PRIVATE": "PRIVATE",
+  "FOREIGN PUBLIC": "PUBLIC",
+  "FOREIGN FOR-PROFIT": "PROPRIETARY"
+}
+datos = datos.replace(cambios)
+publicas = datos[datos["School Type_PRIVATE"] == "PUBLIC"]
+privadas = datos[datos["School Type_PRIVATE"] != "PUBLIC"]
 ```
 
 ```{python}
 datos.info()
+len(publicas)
+len(privadas)
 ```
 ```{python}
-estadists = datos.describe()
-print(estadists)
+estadists_publicas = publicas.describe()
+estadists_privadas = privadas.describe()
+print(estadists_publicas)
+print(estadists_privadas)
 ```
 
+
 ```{python}
+plt.figure(figsize=(10, 10))
 sns.set_theme()
+graf = sns.histplot(x = "# of Loans Originated_5", data = publicas)
+plt.title('Cantidad de Préstamos Subsidiados por Univeridades Públicas')
+plt.xlabel('Cantidad de préstamos')
+plt.ylabel('Frecuencia')
+plt.xscale("log")
+plt.xlim(0, 1000)
+plt.show()
+graf.clear()
+```
 
+```{python}
+plt.figure(figsize=(10, 10))
+sns.set_theme()
+graf = sns.histplot(x = "# of Loans Originated_5", data = privadas)
+plt.title('Cantidad de Préstamos Subsidiados por Univeridades Privadas')
+plt.xlabel('Cantidad de préstamos')
+plt.ylabel('Frecuencia')
+plt.xscale("log")
+plt.xlim(0, 1000)
+plt.show()
+graf.clear()
+```
+
+
+```{python}
+plt.figure(figsize=(10, 10))
+sns.set_theme()
+graf = sns.histplot(x = "# of Loans Originated_8", data = publicas)
+plt.title('Cantidad de Préstamos No Subsidiados por Univeridades Públicas')
+plt.xlabel('Cantidad de préstamos')
+plt.ylabel('Frecuencia')
+plt.xscale("log")
+plt.xlim(0, 1000)
+plt.show()
+graf.clear()
+```
+
+```{python}
+plt.figure(figsize=(10, 10))
+sns.set_theme()
+graf = sns.histplot(x = "# of Loans Originated_8", data = privadas)
+plt.title('Cantidad de Préstamos No Subsidiados por Univeridades Privadas')
+plt.xlabel('Cantidad de préstamos')
+plt.ylabel('Frecuencia')
+plt.xscale("log")
+plt.xlim(0, 1000)
+plt.show()
+graf.clear()
 ```
 
