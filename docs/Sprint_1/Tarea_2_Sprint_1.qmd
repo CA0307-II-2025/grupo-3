@@ -46,12 +46,20 @@ El estudio de la estructura de dependencia mediante cópulas en los préstamos e
 
 
 
+
 ## Objetivos
 
-### Objetivo General
+## Objetivo General
 
-Estimar y comparar la variabilidad del monto promedio de los préstamos estudiantiles en universidades públicas y privadas, utilizando métodos de remuestreo (Bootstrap y Jackknife).
+Analizar y comparar las dependencias estadísticas entre variables clave de los préstamos estudiantiles (como el número de préstamos, monto originado, monto desembolsado y número de beneficiarios) en universidades públicas y privadas, utilizando cópulas, con el fin de identificar patrones estructurales diferenciados en la distribución del crédito educativo.
 
+### Objetivos Específicos
+
+ - Clasificar y caracterizar las instituciones educativas según su tipo (públicas, privadas y sin fines de lucro), y estimar las distribuciones marginales de las variables de interés relacionadas con los préstamos estudiantiles.
+
+ - Aplicar y ajustar modelos de cópulas para capturar y describir la estructura de dependencia entre las variables de préstamos estudiantiles, diferenciando por tipo de institución.
+
+ - Comparar de manera gráfica y numérica las cópulas ajustadas entre universidades públicas y privadas, evaluando si las diferencias observadas en las dependencias son estadísticamente significativas e implican cambios en el comportamiento del endeudamiento estudiantil.
 ---
 
 ## Referencias
