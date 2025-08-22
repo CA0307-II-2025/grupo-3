@@ -1,266 +1,91 @@
-% Options for packages loaded elsewhere
-\PassOptionsToPackage{unicode}{hyperref}
-\PassOptionsToPackage{hyphens}{url}
-\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
-%
-\documentclass[
-  11pt,
-]{article}
+\documentclass[11pt,a4paper]{article}
 
-\usepackage{amsmath,amssymb}
-\usepackage{iftex}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \usepackage{unicode-math}
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
-\usepackage{lmodern}
-\ifPDFTeX\else
-    % xetex/luatex font selection
-\fi
-% Use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\IfFileExists{microtype.sty}{% use microtype if available
-  \usepackage[]{microtype}
-  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-}{}
-\makeatletter
-\@ifundefined{KOMAClassName}{% if non-KOMA class
-  \IfFileExists{parskip.sty}{%
-    \usepackage{parskip}
-  }{% else
-    \setlength{\parindent}{0pt}
-    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
-}{% if KOMA class
-  \KOMAoptions{parskip=half}}
-\makeatother
-\usepackage{xcolor}
-\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry}
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
-% Make \paragraph and \subparagraph free-standing
-\makeatletter
-\ifx\paragraph\undefined\else
-  \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}{
-    \@ifstar
-      \xxxParagraphStar
-      \xxxParagraphNoStar
-  }
-  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
-  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-  \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}{
-    \@ifstar
-      \xxxSubParagraphStar
-      \xxxSubParagraphNoStar
-  }
-  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
-  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
-\makeatother
+% Paquetes básicos
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+\usepackage{geometry}
+\geometry{top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm}
+\usepackage{setspace}
+\setstretch{1.3}
 
+% Bibliografía
+\usepackage[backend=biber,style=apa]{biblatex}
+\addbibresource{referencias.bib}
 
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
-\usepackage{calc} % for calculating minipage widths
-% Correct order of tables after \paragraph or \subparagraph
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
-\makeatother
-% Allow footnotes in longtable head/foot
-\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-\makesavenoteenv{longtable}
-\usepackage{graphicx}
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-% Set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
-% definitions for citeproc citations
-\NewDocumentCommand\citeproctext{}{}
-\NewDocumentCommand\citeproc{mm}{%
-  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
-\makeatletter
- % allow citations to break across lines
- \let\@cite@ofmt\@firstofone
- % avoid brackets around text for \cite:
- \def\@biblabel#1{}
- \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
-\makeatother
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
- {\begin{list}{}{%
-  \setlength{\itemindent}{0pt}
-  \setlength{\leftmargin}{0pt}
-  \setlength{\parsep}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1
-   \setlength{\leftmargin}{\cslhangindent}
-   \setlength{\itemindent}{-1\cslhangindent}
-  \fi
-  % set entry spacing
-  \setlength{\itemsep}{#2\baselineskip}}}
- {\end{list}}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
-
-\usepackage{booktabs}
-\usepackage{longtable}
-\usepackage{array}
-\usepackage{multirow}
-\usepackage{wrapfig}
-\usepackage{float}
-\usepackage{colortbl}
-\usepackage{pdflscape}
-\usepackage{tabu}
-\usepackage{threeparttable}
-\usepackage{threeparttablex}
-\usepackage[normalem]{ulem}
-\usepackage{makecell}
-\usepackage{xcolor}
-\usepackage{caption}
-\captionsetup[table]{labelformat=empty}
-\makeatletter
-\@ifpackageloaded{caption}{}{\usepackage{caption}}
-\AtBeginDocument{%
-\ifdefined\contentsname
-  \renewcommand*\contentsname{Tabla de contenidos}
-\else
-  \newcommand\contentsname{Tabla de contenidos}
-\fi
-\ifdefined\listfigurename
-  \renewcommand*\listfigurename{Listado de Figuras}
-\else
-  \newcommand\listfigurename{Listado de Figuras}
-\fi
-\ifdefined\listtablename
-  \renewcommand*\listtablename{Listado de Tablas}
-\else
-  \newcommand\listtablename{Listado de Tablas}
-\fi
-\ifdefined\figurename
-  \renewcommand*\figurename{Figura}
-\else
-  \newcommand\figurename{Figura}
-\fi
-\ifdefined\tablename
-  \renewcommand*\tablename{Tabla}
-\else
-  \newcommand\tablename{Tabla}
-\fi
+% Título
+\title{Avance del Proyecto de Investigación \\[0.2cm]
+\large Comparación de la estructura de dependencia entre variables de préstamos estudiantiles en universidades públicas y privadas mediante cópulas}
+\author{
+Gabriel Sanabria Alvarado \, | \, Carné: C27184 \\
+Diego Alberto Vega Víquez \, | \, Carné: C38367 \\
+Jeikel Navarro Solís \, | \, Carné: C25518 \\
+Andy Roberto Peralta Duarte \, | \, Carné: \dots
 }
-\@ifpackageloaded{float}{}{\usepackage{float}}
-\floatstyle{ruled}
-\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
-\floatname{codelisting}{Listado}
-\newcommand*\listoflistings{\listof{codelisting}{Listado de Listados}}
-\makeatother
-\makeatletter
-\makeatother
-\makeatletter
-\@ifpackageloaded{caption}{}{\usepackage{caption}}
-\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
-\makeatother
-
-\ifLuaTeX
-\usepackage[bidi=basic]{babel}
-\else
-\usepackage[bidi=default]{babel}
-\fi
-\babelprovide[main,import]{spanish}
-% get rid of language-specific shorthands (see #6817):
-\let\LanguageShortHands\languageshorthands
-\def\languageshorthands#1{}
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
-\usepackage{bookmark}
-
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
-\hypersetup{
-  pdfauthor={Diego Vega Víquez},
-  pdflang={es},
-  colorlinks=true,
-  linkcolor={blue},
-  filecolor={Maroon},
-  citecolor={Blue},
-  urlcolor={Blue},
-  pdfcreator={LaTeX via pandoc}}
-
-
-\title{Título del proyecto}
-\usepackage{etoolbox}
-\makeatletter
-\providecommand{\subtitle}[1]{% add subtitle to \maketitle
-  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
-}
-\makeatother
-\subtitle{Avance Proyecto Final
-
-CA-0307 Estadística Actuarial II}
-\author{Diego Alberto Vega Víquez \and Gabriel Sanabria A. \and Jeikel Navarro \and Andy Roberto Peralta Duarte
-Fonseca}
-\date{}
+\date{\today}
 
 \begin{document}
+
 \maketitle
-\begin{abstract}
-Aquí va a ir el resumen o abstract del proyecto \newpage
-\end{abstract}
 
-\renewcommand*\contentsname{Índice}
-{
-\hypersetup{linkcolor=}
-\setcounter{tocdepth}{3}
-\tableofcontents
-}
+\section{Introducción}
 
-\newpage
+El financiamiento de la educación superior ha sido siempre un aspecto vital para el acceso y la permanencia de los estudiantes en las universidades. En particular, los préstamos estudiantiles son una de las principales fuentes de recursos para cubrir los costos de matrícula y manutención, lo que genera un impacto directo en las condiciones financieras de los estudiantes y sus familias. La dinámica de estos préstamos no solo depende de los montos otorgados, también de la interacción entre múltiples variables, tales como la tasa de interés, el plazo, los ingresos familiares, el tipo de institución y las características socioeconómicas del solicitante.
 
-\section{Definición de la pregunta de investigación}
+Bajo este contexto, resulta fundamental comprender cómo se relacionan estas variables en distintos sectores de la educación superior, tanto en las universidades públicas como en las privadas. Las dependencias entre variables financieras suelen presentar comportamientos no lineales y colas pesadas, lo que dificulta su caracterización mediante métodos estadísticos tradicionales basados únicamente en correlaciones lineales. Ante este desafío, las cópulas ofrecen una herramienta robusta para modelar y comparar estructuras de dependencia, al permitir describir con mayor precisión la forma en que interactúan las variables sin restringirse a supuestos de linealidad o normalidad.
 
-\textbf{Pregunta de investigación:}
+El \textit{Federal Family Education Loan (FFEL) Program} fue uno de los principales mecanismos de financiamiento de la educación superior en Estados Unidos hasta su eliminación en 2010. Bajo este esquema, prestamistas privados originaban préstamos estudiantiles con garantía federal, lo que implicaba que el gobierno asumía parte del riesgo crediticio.
 
-¿Cuáles son las diferencias en la estructura de dependencia entre variables relacionadas con préstamos estudiantiles, al comparar universidades públicas y privadas?
+Durante el año académico 2009--2010, el Departamento de Educación implementó medidas extraordinarias para sostener el flujo de crédito en el marco de la crisis financiera de 2008--2009. A través de la \textit{Ensuring Continued Access to Student Loans Act (ECASLA)} se activaron programas de compra y participación de préstamos, mediante los cuales el gobierno adquirió directa o indirectamente alrededor de 60 mil millones de dólares en préstamos FFEL hacia octubre de 2010 \parencite{usdoe2010}.
 
-\section{Objetivo general}
+El documento \textit{2009--2010 Award Year FFEL Volume by School – Award Year Quarterly Activity (04/01/2010--06/30/2010)}, con fecha de procesamiento 4 de mayo de 2012, forma parte de los reportes administrativos que detallan, por institución, los volúmenes de préstamos otorgados bajo el programa FFEL. Estos registros permitían a las autoridades educativas monitorear el nivel de endeudamiento de los estudiantes según el tipo de institución, aspecto central en la evaluación de las políticas de acceso a la educación superior.
 
+En marzo de 2010 se aprobó la \textit{Health Care and Education Reconciliation Act}, que eliminó el FFEL Program y dispuso que a partir del 1º de julio de 2010 todos los nuevos préstamos federales se otorgaran únicamente bajo el \textit{Federal Direct Loan Program}, en el que el financiamiento proviene directamente del gobierno federal \parencite{usdoe2010,usdoe2012}.
+
+El estudio de la estructura de dependencia mediante cópulas en los préstamos estudiantiles permite identificar diferencias significativas entre universidades públicas y privadas, lo cual aporta información valiosa para la gestión del riesgo crediticio, la formulación de políticas de financiamiento y la evaluación de la equidad en el acceso a la educación. De esta manera, la comparación de ambos sectores no solo tiene un interés académico y metodológico, sino también un impacto social y económico, al ofrecer evidencia empírica sobre los patrones de endeudamiento y las condiciones bajo las cuales los estudiantes acceden a recursos financieros.
+
+\section{Revisión bibliográfica}
+
+
+\subsection{The Determinants of Student Loan Repayment Worry (Magwegwe, 2025)}
+
+El artículo revisado aborda la preocupación por el pago de préstamos estudiantiles (\textit{repayment worry}), un fenómeno ampliamente reportado en Estados Unidos, donde hasta el 48\% de los prestatarios y el 56\% de los jóvenes trabajadores expresan angustia por sus deudas. Este problema se enmarca en el rápido crecimiento de la deuda estudiantil a nivel mundial, que ha alcanzado cifras históricas en países como Estados Unidos, Reino Unido, Canadá y los Países Bajos. La literatura muestra que esta preocupación va más allá de lo financiero, pues tiene efectos negativos sobre la salud física, la salud psicológica y la satisfacción con la vida, lo que convierte el tema en un asunto de interés tanto académico como de política pública.
+
+El estudio utiliza datos de la \textit{National Financial Capability Survey} (2021, n=2,582) para desarrollar y probar un modelo teórico que explica los determinantes de la preocupación por el pago de los préstamos. Mediante regresiones logísticas, se identificó que los estresores ---dificultad financiera y morosidad en los pagos--- son predictores significativos de la preocupación. Asimismo, se evaluaron recursos de afrontamiento como la autoeficacia financiera, la satisfacción financiera y el ingreso del hogar, los cuales se asociaron con niveles más bajos de preocupación, aunque la capacidad financiera no mostró efectos relevantes.
+
+Un hallazgo relevante es el papel del género como moderador. Los resultados muestran que los hombres experimentan un efecto más fuerte de la dificultad financiera sobre la preocupación por el pago, aunque este patrón no se observa en el caso de la morosidad. Este aporte responde a llamados previos de la literatura a incluir variables emocionales, psicológicas y de moderación en los estudios sobre deuda estudiantil, lo cual permite ampliar la comprensión de las dinámicas más allá de los simples indicadores económicos.
+
+\subsection{Measuring systemic risk using vine-copula}
+
+El estudio presenta un modelo intuitivo de riesgo sistémico enfocado en la compleja interdependencia entre instituciones financieras, caracterizado a partir de su probabilidad de incumplimiento y clasificado en cinco grupos de riesgo. Para capturar la estructura de correlación parcial entre dichos grupos, se emplean modelos avanzados de cópulas ---C-cópula canónica y D-vine cópulas--- que superan las limitaciones de las cópulas multivariadas tradicionales en contextos de alta dimensionalidad. Los resultados muestran que las instituciones de segundo nivel contribuyen más al riesgo sistémico que las de mayor calificación, lo que cuestiona la percepción de que solo los grandes bancos son fuente principal de contagio. Asimismo, se discute la aplicabilidad de este enfoque al precio de derivados de crédito, como los \textit{credit default swaps}, resaltando la relevancia de modelar de manera realista las dependencias en escenarios de crisis.
+
+La motivación central surge de las limitaciones de los modelos tradicionales basados en la cópula Gaussiana \parencite{li1999} y de la evidencia empírica tras la crisis financiera de 2008, que mostró que las correlaciones se intensifican en las colas de la distribución. Las variables clave analizadas son la probabilidad de default, la estructura de dependencia entre instituciones financieras y la correlación en colas. En cuanto a fuentes de datos, se utilizan principalmente registros internacionales de riesgo de incumplimiento y calificaciones crediticias. El artículo se alinea con una literatura que aplica cópulas para estudiar correlaciones de activos financieros, mercados bursátiles y riesgos de crédito, pero identifica un vacío importante: la escasa capacidad de los modelos multivariados clásicos para representar dependencias complejas en contextos sistémicos. Su contribución metodológica radica en mostrar cómo los modelos vine copula pueden capturar de forma más flexible y realista los patrones de dependencia, abriendo espacio para futuras aplicaciones tanto en la medición de riesgo como en el diseño de regulaciones financieras macroprudenciales.
+
+\subsection{Checking for asymmetric default dependence in a credit card portfolio: A copula approach (Crook \& Moreira, 2011)}
+
+Este estudio se centra en las limitaciones de los modelos tradicionales de riesgo crediticio, los cuales asumen correlación lineal y distribuciones normales de pérdidas. La evidencia empírica demuestra que tales supuestos resultan inadecuados, pues las pérdidas suelen mostrar asimetrías y dependencia en las colas, especialmente en la izquierda, donde se concentran los eventos de incumplimiento. [...]
+
+\subsection{New Ways of Modeling Loan-to-Income Distributions and their Evolution in Time (Gerth \& Temnov, 2022)}
+
+Este artículo estudia los efectos de las políticas macroprudenciales introducidas en Irlanda en 2015 sobre la estabilidad financiera, en un contexto marcado por la fuerte crisis inmobiliaria y bancaria. [...]
+
+\subsection{Modeling Portfolio Credit Risk Taking into Account the Default Correlations Using a Copula Approach (Clemente, 2020)}
+
+Este trabajo propone una metodología cuantitativa avanzada para medir el riesgo crediticio de carteras de préstamos y asignar capital de manera coherente entre contrapartes, superando las limitaciones del enfoque regulatorio de Basel II y III. [...]
+
+
+\section{Objetivos}
+
+\subsection*{Objetivo general}
 Analizar y comparar las dependencias estadísticas entre variables clave de los préstamos estudiantiles (como el número de préstamos, monto originado, monto desembolsado y número de beneficiarios) en universidades públicas y privadas, utilizando cópulas, con el fin de identificar patrones estructurales diferenciados en la distribución del crédito educativo.
 
-\section{Objetivos específicos}
+\subsection*{Objetivos específicos}
+\begin{itemize}
+  \item Clasificar y caracterizar las instituciones educativas según su tipo (públicas, privadas y sin fines de lucro), y estimar las distribuciones marginales de las variables de interés relacionadas con los préstamos estudiantiles.
+  \item Aplicar y ajustar modelos de cópulas para capturar y describir la estructura de dependencia entre las variables de préstamos estudiantiles, diferenciando por tipo de institución.
+  \item Comparar de manera gráfica y numérica las cópulas ajustadas entre universidades públicas y privadas, evaluando si las diferencias observadas en las dependencias son estadísticamente significativas e implican cambios en el comportamiento del endeudamiento estudiantil.
+\end{itemize}
 
-\begin{enumerate}
-    \item Clasificar y caracterizar las instituciones educativas según su tipo (públicas, privadas y sin fines de lucro), y estimar las distribuciones marginales de las variables de interés relacionadas con los préstamos estudiantiles.
-
-    \item Aplicar y ajustar modelos de cópulas para capturar y describir la estructura de dependencia entre las variables de préstamos estudiantiles, diferenciando por tipo de institución.
-
-    \item Comparar de manera gráfica y numérica las cópulas ajustadas entre universidades públicas y privadas, evaluando si las diferencias observadas en las dependencias son estadísticamente significativas e implican cambios en el comportamiento del endeudamiento estudiantil.
-\end{enumerate}
-
-\section{Tema de investigación}
-
-Comparación de la estructura de dependencia entre variables de préstamos estudiantiles en universidades públicas y privadas mediante cópulas.
+\printbibliography
 
 \end{document}
