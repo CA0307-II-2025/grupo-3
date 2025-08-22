@@ -1,0 +1,15 @@
+---
+title: "Revision Bibliografica"
+format: html
+editor: visual
+---
+
+## The Determinants of Student Loan Repayment Worry (Frank M. Magwegwe, 2025)
+
+El artículo revisado aborda la preocupación por el pago de préstamos estudiantiles (repayment worry), un fenómeno ampliamente reportado en Estados Unidos, donde hasta el 48% de los prestatarios y el 56% de los jóvenes trabajadores expresan angustia por sus deudas. Este problema se enmarca en el rápido crecimiento de la deuda estudiantil a nivel mundial, que ha alcanzado cifras históricas en países como Estados Unidos, Reino Unido, Canadá y los Países Bajos. La literatura muestra que esta preocupación va más allá de lo financiero, pues tiene efectos negativos sobre la salud física, la salud psicológica y la satisfacción con la vida, lo que convierte el tema en un asunto de interés tanto académico como de política pública.
+
+El estudio utiliza datos de la National Financial Capability Survey (2021, n=2,582) para desarrollar y probar un modelo teórico que explica los determinantes de la preocupación por el pago de los préstamos. Mediante regresiones logísticas, se identificó que los estresores —dificultad financiera y morosidad en los pagos— son predictores significativos de la preocupación. Asimismo, se evaluaron recursos de afrontamiento como la autoeficacia financiera, la satisfacción financiera y el ingreso del hogar, los cuales se asociaron con niveles más bajos de preocupación, aunque la capacidad financiera no mostró efectos relevantes.
+
+Un hallazgo relevante es el papel del género como moderador. Los resultados muestran que los hombres experimentan un efecto más fuerte de la dificultad financiera sobre la preocupación por el pago, aunque este patrón no se observa en el caso de la morosidad. Este aporte responde a llamados previos de la literatura a incluir variables emocionales, psicológicas y de moderación en los estudios sobre deuda estudiantil, lo cual permite ampliar la comprensión de las dinámicas más allá de los simples indicadores económicos.
+
+En cuanto a los enfoques metodológicos, la investigación se apoya en datos nacionales representativos y en modelos de regresión logística, lo que asegura robustez empírica. Sin embargo, la literatura aún presenta vacíos, particularmente en la comparación internacional de los determinantes de la preocupación, el análisis longitudinal de sus efectos en trayectorias vitales y la exploración de otros posibles moderadores (como el nivel educativo, la etnicidad o la estructura familiar). Asimismo, se identifican fuentes de datos comparables en países con sistemas de préstamos consolidados, lo que abre la oportunidad de realizar estudios de cópulas o dependencia entre variables financieras y psicológicas, contrastando contextos públicos y privado
