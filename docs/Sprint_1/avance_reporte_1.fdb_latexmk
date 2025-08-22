@@ -1,17 +1,16 @@
 # Fdb version 4
-["biber avance_reporte_1"] 0 "avance_reporte_1.bcf" "avance_reporte_1.bbl" "avance_reporte_1" 1755854300.95376 0
-  "avance_reporte_1.bcf" 0 -1 0 "pdflatex"
-  "referencias.bib" 0 -1 0 ""
+["biber avance_reporte_1"] 1755855383.77823 "avance_reporte_1.bcf" "avance_reporte_1.bbl" "avance_reporte_1" 1755855386.90533 0
+  "avance_reporte_1.bcf" 1755855386.79937 134136 ee06e9b80486df1d940252c757ebc90b "pdflatex"
+  "referencias.bib" 1755855349.79479 8979 d64af671246638f0579f3ba5d427c839 ""
   (generated)
   "avance_reporte_1.bbl"
   "avance_reporte_1.blg"
   (rewritten before read)
-["pdflatex"] 1755854300.048 "/Users/diegovegav/Library/CloudStorage/OneDrive-UniversidaddeCostaRica/EMat/CA-0307/Repositorio/grupo-3/docs/avance_reporte_1.tex" "avance_reporte_1.pdf" "avance_reporte_1" 1755854300.95417 0
+["pdflatex"] 1755855386.11241 "/Users/diegovegav/Library/CloudStorage/OneDrive-UniversidaddeCostaRica/EMat/CA-0307/Repositorio/grupo-3/docs/Sprint_1/avance_reporte_1.tex" "avance_reporte_1.pdf" "avance_reporte_1" 1755855386.90575 0
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1755813394.14017 82873 6710b06857b15f591213c883985d4b5a ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1741961261.22322 12668 933f34d8b1ae41efd99f681cf0575962 ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1755852081.08572 13268127 37ab86c3f627bb69007c24375c81ad56 ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1741752042.90481 1460 8005ce585ff351dff78998923504da5e ""
-  "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmbx10.tfm" 1741752042.41252 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmbx12.tfm" 1741752042.41261 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmmi10.tfm" 1741752042.41395 1528 abec98dbc43e172678c11b3b9031252a ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmmi12.tfm" 1741752042.41403 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -26,7 +25,6 @@
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmsy6.tfm" 1741752042.417 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmsy8.tfm" 1741752042.41716 1120 8b7d695260f3cff42e636090a8002094 ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmti10.tfm" 1741752042.41763 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
-  "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1741752036.52294 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1741752036.52404 32080 340ef9bf63678554ee606688e7b5339d ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1741752036.55131 35752 024fb6c41858982481f6968b5fc26508 ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1741752036.55241 32722 d7379af29a190c3f453aba36302ff5a9 ""
@@ -75,11 +73,11 @@
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/tex/latex/logreq/logreq.sty" 1746953970.69932 6187 b27afc771af565d3a9ff1ca7d16d0d46 ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/tex/latex/setspace/setspace.sty" 1741752719.63178 22490 8cac309b79a4c53a4ffce4b1b07aead0 ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/tex/latex/url/url.sty" 1741752050.32373 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "/Users/diegovegav/Library/CloudStorage/OneDrive-UniversidaddeCostaRica/EMat/CA-0307/Repositorio/grupo-3/docs/avance_reporte_1.tex" 1755854297.52689 11438 94cafee55971d5d1be5a02ad9b5e1bad ""
-  "avance_reporte_1.aux" 1755854300.65843 1984 4d9db51fd4aae68a4f5d93e0f53670ec "pdflatex"
-  "avance_reporte_1.bbl" 0 -1 0 "biber avance_reporte_1"
-  "avance_reporte_1.run.xml" 1755854300.66203 2444 9ffe9465d714cc5d0d736cee48002aaf "pdflatex"
-  "avance_reporte_1.tex" 1755854297.52689 11438 94cafee55971d5d1be5a02ad9b5e1bad ""
+  "/Users/diegovegav/Library/CloudStorage/OneDrive-UniversidaddeCostaRica/EMat/CA-0307/Repositorio/grupo-3/docs/Sprint_1/avance_reporte_1.tex" 1755855382.11988 11430 77803ffbe8eda50905deb7a9651c6eff ""
+  "avance_reporte_1.aux" 1755855386.79623 2122 62ad3fb1a36bbff45af039cf602be04d "pdflatex"
+  "avance_reporte_1.bbl" 1755855385.30275 5896 ced8b8bbd70f5078a642947f55e0c8fe "biber avance_reporte_1"
+  "avance_reporte_1.run.xml" 1755855386.8004 2444 73058266dab25caeb39c4579ef2e1a82 "pdflatex"
+  "avance_reporte_1.tex" 1755855382.11988 11430 77803ffbe8eda50905deb7a9651c6eff ""
   (generated)
   "avance_reporte_1.aux"
   "avance_reporte_1.bcf"

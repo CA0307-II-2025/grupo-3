@@ -1,0 +1,17 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'avance_reporte_1.blg'
+[59] biber-darwin:342> INFO - === Fri Aug 22, 2025, 03:36:25
+[71] Biber.pm:421> INFO - Reading 'avance_reporte_1.bcf'
+[152] Biber.pm:1002> INFO - Found 2 citekeys in bib section 0
+[167] Biber.pm:4487> INFO - Processing section 0
+[174] Biber.pm:4678> INFO - Looking for bibtex file 'referencias.bib' for section 0
+[175] bibtex.pm:1713> INFO - LaTeX decoding ...
+[185] bibtex.pm:1519> INFO - Found BibTeX data source 'referencias.bib'
+[214] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[214] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[214] Biber.pm:4307> INFO - Sorting list 'apa/apasortcite//global/global/global' of type 'entry' with template 'apa' and locale 'es-ES'
+[222] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[222] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[222] Biber.pm:4307> INFO - Sorting list 'apa/global//global/global/global' of type 'entry' with template 'apa' and locale 'es-ES'
+[223] bbl.pm:676> INFO - Writing 'avance_reporte_1.bbl' with encoding 'UTF-8'
+[225] bbl.pm:779> INFO - Output to avance_reporte_1.bbl

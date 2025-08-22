@@ -1,0 +1,148 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{usdoe2010}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f49ef1b679e41a2cf48842a6f1dfc28f}{%
+           family={{U.S. Department of Education}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {U.S. Department of Education}%
+      }
+      \list{location}{1}{%
+        {Washington, D.C.}%
+      }
+      \strng{namehash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{fullhash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{fullhashraw}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{bibnamehash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{authorbibnamehash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{authornamehash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{authorfullhash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{authorfullhashraw}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \field{extraname}{1}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://studentaid.gov/sites/default/files/fsa_annual_report_2009.pdf}}
+      \field{title}{Federal Student Aid Annual Report 2010}
+      \field{year}{2010}
+    \endentry
+    \entry{usdoe2012}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f49ef1b679e41a2cf48842a6f1dfc28f}{%
+           family={{U.S. Department of Education}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Federal Student Aid}%
+      }
+      \strng{namehash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{fullhash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{fullhashraw}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{bibnamehash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{authorbibnamehash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{authornamehash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{authorfullhash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{authorfullhashraw}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \field{extraname}{2}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://studentaid.gov}}
+      \field{title}{Federal Family Education Loan Program: Annual Reports and Data}
+      \field{year}{2012}
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global/global}
+    \entry{usdoe2010}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f49ef1b679e41a2cf48842a6f1dfc28f}{%
+           family={{U.S. Department of Education}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {U.S. Department of Education}%
+      }
+      \list{location}{1}{%
+        {Washington, D.C.}%
+      }
+      \strng{namehash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{fullhash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{fullhashraw}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{bibnamehash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{authorbibnamehash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{authornamehash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{authorfullhash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{authorfullhashraw}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \field{extraname}{1}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://studentaid.gov/sites/default/files/fsa_annual_report_2009.pdf}}
+      \field{title}{Federal Student Aid Annual Report 2010}
+      \field{year}{2010}
+    \endentry
+    \entry{usdoe2012}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f49ef1b679e41a2cf48842a6f1dfc28f}{%
+           family={{U.S. Department of Education}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Federal Student Aid}%
+      }
+      \strng{namehash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{fullhash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{fullhashraw}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{bibnamehash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{authorbibnamehash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{authornamehash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{authorfullhash}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \strng{authorfullhashraw}{f49ef1b679e41a2cf48842a6f1dfc28f}
+      \field{extraname}{2}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://studentaid.gov}}
+      \field{title}{Federal Family Education Loan Program: Annual Reports and Data}
+      \field{year}{2012}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput

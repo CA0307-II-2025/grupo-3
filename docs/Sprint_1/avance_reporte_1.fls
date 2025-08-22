@@ -1,6 +1,6 @@
-PWD /Users/diegovegav/Library/CloudStorage/OneDrive-UniversidaddeCostaRica/EMat/CA-0307/Repositorio/grupo-3/docs
+PWD /Users/diegovegav/Library/CloudStorage/OneDrive-UniversidaddeCostaRica/EMat/CA-0307/Repositorio/grupo-3/docs/Sprint_1
 INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt
-INPUT /Users/diegovegav/Library/CloudStorage/OneDrive-UniversidaddeCostaRica/EMat/CA-0307/Repositorio/grupo-3/docs/avance_reporte_1.tex
+INPUT /Users/diegovegav/Library/CloudStorage/OneDrive-UniversidaddeCostaRica/EMat/CA-0307/Repositorio/grupo-3/docs/Sprint_1/avance_reporte_1.tex
 OUTPUT avance_reporte_1.log
 INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
 INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
@@ -113,6 +113,11 @@ INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/tex/la
 INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/tex/latex/biblatex/lbx/spanish.lbx
 INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/tex/latex/biblatex/lbx/spanish.lbx
 OUTPUT avance_reporte_1.bcf
+INPUT avance_reporte_1.bbl
+INPUT ./avance_reporte_1.bbl
+INPUT ./avance_reporte_1.bbl
+INPUT ./avance_reporte_1.bbl
+INPUT avance_reporte_1.bbl
 INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmr17.tfm
 INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmr12.tfm
 INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmr8.tfm
@@ -126,7 +131,6 @@ INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/
 INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmr12.tfm
 INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmti10.tfm
-INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmbx10.tfm
 OUTPUT avance_reporte_1.pdf
 INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map
 INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/tcrm1095.tfm
@@ -138,8 +142,6 @@ INPUT avance_reporte_1.run.xml
 OUTPUT avance_reporte_1.run.xml
 INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk
 INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk
-INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb

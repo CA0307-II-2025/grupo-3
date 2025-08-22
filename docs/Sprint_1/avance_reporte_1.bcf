@@ -3074,7 +3074,6 @@
     <bcf:citekey order="1" intorder="1">usdoe2010</bcf:citekey>
     <bcf:citekey order="2" intorder="1">usdoe2010</bcf:citekey>
     <bcf:citekey order="2" intorder="2">usdoe2012</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">li1999</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">
