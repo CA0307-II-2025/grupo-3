@@ -95,4 +95,3 @@ plt.xlim(0, 1000)
 plt.show()
 graf.clear()
 ```
-
