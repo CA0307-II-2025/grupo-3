@@ -2,31 +2,42 @@
 
 ## 🎯  Objetivo del Sprint:
 
- _Declarar la meta del sprint en 1-2 frases (ej: "Tener datos limpios y un análisis descriptivo inicial completado")._
+Lectura de base de datos y asegurar su consistencia para análisis.
+Incluye completar la limpieza final de datos, documentar la estructura de la base, consolidar el entorno de trabajo compartido y avanzar con el marco teórico y bibliografía del reporte científico.
+
 
 ## 😃  Historias de usuario
 
-- HU# - "Título de la Historia" (Estimación: Y pts) – *Criterios de aceptación confirmados.*
-- HU# - ...
-*(Listar las historias del backlog que el equipo se compromete a completar este sprint, con sus IDs y breve nombre.)*
+- **HU#5 – “Script final de lectura y limpieza”** (Estimación: 5 pts) – *El script procesa, limpia/imputa valores faltantes, filtra outliers y genera la base final almacenada localmente.*
+- **HU#6 – “Documentación de la base de datos”** (Estimación: 3 pts) – *Documento con estructura de datos, unidad estadística, localización espacial, temporal, etc.*
+- **HU#7 – “Consolidar entorno de trabajo reproducible”** (Estimación: 3 pts) – *Todos los miembros del equipo pueden trabajar bajo el mismo entorno sin errores.*
+- **HU#8 – “Escritura del marco teórico y enlace de la bibliografía”** (Estimación: 5 pts) – *Marco teórico redactado y referencias correctamente enlazadas en el reporte científico.*
 
-
+---
 
 ## 🔜  Plan de alto nivel:
-- *Semana 1:* _Tareas principales (ej: Ingesta de datos, Setup entorno CI)._
-- *Semana 2:* _Tareas principales (ej: Implementar modelo y validar, preparar demo)._
+- *Semana 1:*
+  - Implementar script final de limpieza y validación de la base de datos.
+  - Documentar estructura de datos y preparar archivo con descripciones.
 
+- *Semana 2:*
+  - Validar consistencia del entorno de trabajo para todos los integrantes.
+  - Redactar el marco teórico con bibliografía enlazada en el reporte científico.
 
+---
 ## 🥇  Criterios de aceptación del Sprint:
-- [ ] _Todas las historias listadas completadas y aceptadas por el profesor._
-- [ ] _El código limpia automáticamente la base de datos._
+- [ ] Todas las historias listadas completadas y aceptadas por el profesor.
+- [x] Los datos procesados se almacenan localmente en formato estándar.
+- [x] Scripts de limpieza eliminan o imputan valores faltantes y filtran outliers.
+- [x] Documento con estructura de los datos correctamente entregado.
+- [x] Reporte científico con marco teórico ordenado y referencias enlazadas.
 
-
+---
 ## 📌  Asignación de tareas inicial
-- *Persona A:* Historia 1
-- *Persona B:* Historia 2
-- *Persona C:* documentación
-
+- *Jeikel:* Script final de lectura y limpieza + colaborar con B en documentación (ej. describir variables transformadas en el script).
+- *Gabriel:* Marco teórico y bibliografía + redactar parte del reporte científico con la estructura ya establecida.
+- *Andy:* Documentación de la base de datos + revisión de bibliografía (apoyar a D con fichas de papers)
+- *Diego:* Configuración del entorno de trabajo compartido + pruebas de ejecución de los scripts en diferentes máquinas.
 ## 🚫 Posibles bloqueos o impedimentos conocidos
 
 - **Bloqueo:** _No tenemos la base de datos limpia.
@@ -45,27 +56,28 @@ El formato para cada estudiante debe ser
 
 
 
-##  Fecha: YYYY-MM-DD
+##  Fecha: 2025-08-28
 
-### Estudiante A:
+### Jeikel:
 - **¿Qué hice ayer?**:
 - **¿Qué haré hoy?**:
 - **¿Hay algo que me está bloqueando?**:
 
-### Estudiante B:
+### Gabriel:
 - **¿Qué hice ayer?**:
 - **¿Qué haré hoy?**:
 - **¿Hay algo que me está bloqueando?**:
 
-### Estudiante C:
+### Andy:
 - **¿Qué hice ayer?**:
 - **¿Qué haré hoy?**:
 - **¿Hay algo que me está bloqueando?**:
 
-### Estudiante D:
+### Diego:
 - **¿Qué hice ayer?**:
 - **¿Qué haré hoy?**:
 - **¿Hay algo que me está bloqueando?**:
+
 
 
 
