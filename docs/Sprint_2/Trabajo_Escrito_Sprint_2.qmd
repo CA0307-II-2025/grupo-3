@@ -1,0 +1,124 @@
+---
+title: "Comparación de la estructura de dependencia entre variables de préstamos estudiantiles en universidades públicas y privadas mediante cópulas"
+author:
+  - "Gabriel Sanabria Alvarado <span style='font-size:1em; color:#555;'> | Carné: C27184 </span>"
+  - "Nombre 2 <span style='font-size:1em; color:#555;'> | Carné: ... </span>"
+  - "Nombre 3 <span style='font-size:1em; color:#555;'> | Carné: ... </span>"
+  - "Nombre 4 <span style='font-size:1em; color:#555;'> | Carné: ... </span>"
+date: today
+format:
+  html:
+    math: mathjax
+    title-block-banner: true
+    toc: true
+    toc-title: "Ejercicios"
+    toc-depth: 2
+    number-sections: false
+    self-contained: true
+    theme: flatly
+    css: styles.css
+    smooth-scroll: true
+    highlight-style: github
+    title-block-banner-meta-font-size: 1.5em
+    title-block-banner-divider: true
+  pdf:
+    documentclass: article
+lang: es
+bibliography: referencias.bib
+---
+
+## Introducción
+
+El financiamiento de la educación superior ha sido siempre un aspecto vital para el acceso y la permanencia de los estudiantes en las universidades. En particular, los préstamos estudiantiles son una de las principales fuentes de recursos para cubrir los costos de matrícula y manutención, lo que genera un impacto directo en las condiciones financieras de los estudiantes y sus familias. La dinámica de estos préstamos no solo depende de los montos otorgados, también de la interacción entre múltiples variables, tales como la tasa de interés, el plazo, los ingresos familiares, el tipo de institución y las características socioeconómicas del solicitante.
+
+Bajo el contexto de esta investigación, resulta fundamental comprender cómo se relacionan estas variables en distintos sectores de la educación superior, tanto en las universidades públicas como en las privadas. Las dependencias entre variables financieras suelen presentar comportamientos no lineales y colas pesadas, lo que dificulta su caracterización mediante métodos estadísticos tradicionales basados únicamente en correlaciones lineales. Ante este desafío, las cópulas ofrecen una herramienta robusta para modelar y comparar estructuras de dependencia, al permitir describir con mayor precisión la forma en que interactúan las variables sin restringirse a supuestos de linealidad o normalidad.
+
+El **Federal Family Education Loan (FFEL) Program** fue uno de los principales mecanismos de financiamiento de la educación superior en Estados Unidos hasta su eliminación en 2010. Bajo este esquema, prestamistas privados originaban préstamos estudiantiles con garantía federal, lo que implicaba que el gobierno asumía parte del riesgo crediticio.
+
+Durante el **año académico 2009-2010**, el Departamento de Educación implementó medidas extraordinarias para sostener el flujo de crédito en el marco de la crisis financiera de 2008-2009. A través de la **Ensuring Continued Access to Student Loans Act (ECASLA)** se activaron programas de compra y participación de préstamos, mediante los cuales el gobierno adquirió directa o indirectamente alrededor de **60 mil millones de dólares en préstamos FFEL** hacia octubre de 2010 [@usdoe2010].
+
+El documento **“2009-2010 Award Year FFEL Volume by School – Award Year Quarterly Activity (04/01/2010-06/30/2010)”**, con fecha de procesamiento **4 de mayo de 2012**, forma parte de los reportes administrativos que detallan, por institución, los volúmenes de préstamos otorgados bajo el programa FFEL. Estos registros permitían a las autoridades educativas monitorear el nivel de endeudamiento de los estudiantes según el tipo de institución, aspecto central en la evaluación de las políticas de acceso a la educación superior.
+
+En marzo de 2010 se aprobó la *Health Care and Education Reconciliation Act*, que eliminó el FFEL Program y dispuso que a partir del **1º de julio de 2010** todos los nuevos préstamos federales se otorgaran únicamente bajo el **Federal Direct Loan Program**, en el que el financiamiento proviene directamente del gobierno federal [@usdoe2010; @usdoe2012].
+
+El estudio de la estructura de dependencia mediante cópulas en los préstamos estudiantiles permite identificar diferencias significativas entre universidades públicas y privadas, lo cual aporta información valiosa para la gestión del riesgo crediticio, la formulación de políticas de financiamiento y la evaluación de la equidad en el acceso a la educación. De esta manera, la comparación de ambos sectores no solo tiene un interés académico y metodológico, sino también un impacto social y económico, al ofrecer evidencia empírica sobre los patrones de endeudamiento y las condiciones bajo las cuales los estudiantes acceden a recursos financieros.
+
+
+
+---
+
+
+
+
+
+## Objetivos
+
+## Objetivo General
+
+Analizar y comparar las dependencias estadísticas entre variables clave de los préstamos estudiantiles (como el número de préstamos, monto originado, monto desembolsado y número de beneficiarios) en universidades públicas y privadas, utilizando cópulas, con el fin de identificar patrones estructurales diferenciados en la distribución del crédito educativo.
+
+### Objetivos Específicos
+
+ - Clasificar y caracterizar las instituciones educativas según su tipo (públicas, privadas y sin fines de lucro), y estimar las distribuciones marginales de las variables de interés relacionadas con los préstamos estudiantiles.
+
+ - Aplicar y ajustar modelos de cópulas para capturar y describir la estructura de dependencia entre las variables de préstamos estudiantiles, diferenciando por tipo de institución.
+
+ - Comparar de manera gráfica y numérica las cópulas ajustadas entre universidades públicas y privadas, evaluando si las diferencias observadas en las dependencias son estadísticamente significativas e implican cambios en el comportamiento del endeudamiento estudiantil.
+---
+
+## Marco Teórico
+
+### Dependencia entre variables y límites de la correlación lineal
+
+En finanzas y gestión de riesgo, las relaciones entre variables suelen ser no lineales, asimétricas y con colas pesadas. La correlación de Pearson captura solo dependencia lineal y puede ser poco informativa ante no linealidades o valores extremos. Por ello se recomiendan medidas basadas en rangos—como $\tau$ de Kendall y $\rho$ de Spearman—y enfoques que separan las marginales de la dependencia (cópulas) [@mcneil2015; @embrechts2003; @nelsen2006].
+
+### Cópulas y el teorema de Sklar
+
+Una cópula es una función de distribución conjunta con marginales uniformes en $[0,1]$ que permite “ensamblar” marginales univariadas para formar una distribución multivariada [@nelsen2006]. El Teorema de Sklar establece que para cualquier distribución multivariada $H$ con marginales $F_1,\dots,F_d$ existe una cópula $C$ tal que
+
+$$ H(x_1,...,x_d)=C(F_1(x_1),...,F_d(x_d)), $$
+y, recíprocamente, $C$ y las marginales determinan $H$ [@sklar1959]. Esta descomposición posibilita modelar por separado (i) las marginales (p. ej., lognormal o gamma para montos; Poisson/NegBin para conteos) y (ii) la estructura de dependencia [@joe2014].
+
+Familias de cópulas y dependencia de cola
+
+Entre las familias más utilizadas se encuentran:
+
+Elípticas: gaussiana (sin dependencia de cola) y t (colas pesadas y dependencia de cola superior e inferior positivas cuando $\nu$ es finito) [@mcneil2015].
+
+Archimedeanas: Clayton (cola inferior fuerte), Gumbel (cola superior fuerte), Frank (simétrica sin dependencia de cola) y Joe (cola superior marcada) [@nelsen2006; @joe2014].
+
+La dependencia de cola superior y inferior se definen como
+
+$$ \lambda_U = \lim_{x \to 1} Pr(U_2>u|U_1>u), $$
+$$ \lambda_L = \lim_{u \to 0} Pr(U_2 \leq u|U_1 \leq u) $$
+Estas métricas son clave en riesgo crediticio al capturar la probabilidad de co-movimientos extremos [@embrechts2003].
+
+Medidas de dependencia robustas
+
+Para comparar sectores (público, privado sin fines de lucro y privado con fines de lucro) conviene emplear $\tau$ de Kendall y $\rho$ de Spearman, menos sensibles a escalas y atípicos que Pearson y, además, directamente vinculadas a parámetros de varias cópulas [@nelsen2006; @joe2014].
+
+Estimación: marginales, PIT e inferencia para cópulas
+
+El flujo usual comprende: (1) ajustar marginales adecuadas a cada variable (montos, conteos); (2) transformar los datos mediante la probability integral transform (PIT) para obtener uniformes $U(0,1)$; y (3) estimar los parámetros de la cópula sobre estas uniformes [@rosenblatt1952; @nelsen2006]. En la práctica se usan esquemas de verosimilitud en dos etapas como Inference Functions for Margins (IFM) o pseudo-máxima verosimilitud con CDF empíricas/paramétricas, que son consistentes bajo condiciones amplias [@genest1995; @joe2014].
+
+Selección de modelos y pruebas de ajuste
+
+La comparación entre familias de cópulas se apoya en AIC y BIC [@akaike1974; @schwarz1978]. Para evaluar el ajuste se recomiendan pruebas basadas en el empirical copula process (estadísticos tipo Cramér–von Mises o Kolmogorov–Smirnov) con bootstrap, que muestran buen poder frente a alternativas plausibles en finanzas [@genest2009; @joe2014].
+
+Extensiones multivariadas: cópulas en “vines”
+
+Al modelar simultáneamente varias variables (p. ej., número de préstamos, monto originado, monto desembolsado, número de beneficiarios), las pair-copula constructions (PCC) o vine cópulas (C-vine/D-vine) permiten construir dependencias multivariadas flexibles a partir de cópulas bivariadas [@bedford2002; @aas2009].
+
+Aplicaciones en finanzas y riesgo crediticio
+
+Las cópulas se han consolidado en gestión de riesgos para modelar pérdidas conjuntas, defaults correlacionados y colas conjuntas [@embrechts2003; @mcneil2015]. En crédito, la cópula gaussiana popularizó el modelado de correlaciones de default en carteras [@li2000], mientras que la cópula t y varias archimedeanas han destacado por capturar eventos extremos conjuntos. En el contexto de préstamos estudiantiles, estos marcos permiten contrastar si la estructura de dependencia entre variables operativas (montos, conteos, beneficiarios) difere por tipo de institución, aportando evidencia para la gestión del riesgo, el diseño de políticas y la equidad en el acceso.
+
+
+
+## Referencias
+
+- @usdoe2010: U.S. Department of Education. (2010). *Federal Student Aid Annual Report 2010*. Washington, D.C.: U.S. Department of Education. Recuperado de: https://studentaid.gov/sites/default/files/fsa_annual_report_2009.pdf
+
+- @usdoe2012: U.S. Department of Education. (2012). *Federal Family Education Loan Program: Annual Reports and Data*. Federal Student Aid. Recuperado de: https://studentaid.gov
+
+- @usdoe2023: U.S. Department of Education. (2023). *National Student Loan Data System – Catalog*. Data.gov. Recuperado de: https://catalog.data.gov/dataset/national-student-loan-data-system-722b0
