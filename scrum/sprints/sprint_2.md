@@ -64,19 +64,22 @@ El formato para cada estudiante debe ser
 - **¿Hay algo que me está bloqueando?**:
 
 ### Gabriel:
-- **¿Qué hice ayer?**:
-- **¿Qué haré hoy?**:
-- **¿Hay algo que me está bloqueando?**:
+- **¿Qué hice ayer?**:Investigar para marco teórico.
+- **¿Qué haré hoy?**: revisión general.
+- **¿Hay algo que me está bloqueando?**: el uso del repositorio.
 
 ### Andy:
-- **¿Qué hice ayer?**: Nada.
-- **¿Qué haré hoy?**: Investigar
+
+- **¿Qué hice ayer?**:Nada.
+- **¿Qué haré hoy?**:Investigar.
 - **¿Hay algo que me está bloqueando?**: No.
+
 
 ### Diego:
 - **¿Qué hice ayer?**:
 - **¿Qué haré hoy?**:
 - **¿Hay algo que me está bloqueando?**:
+
 
 ##  Fecha: 2025-08-28
 
@@ -86,9 +89,9 @@ El formato para cada estudiante debe ser
 - **¿Hay algo que me está bloqueando?**:
 
 ### Gabriel:
-- **¿Qué hice ayer?**:
-- **¿Qué haré hoy?**:
-- **¿Hay algo que me está bloqueando?**:
+- **¿Qué hice ayer?**:Nada.
+- **¿Qué haré hoy?**:Nada.
+- **¿Hay algo que me está bloqueando?**:Uso de git.
 
 ### Andy:
 - **¿Qué hice ayer?**: Investigar.
