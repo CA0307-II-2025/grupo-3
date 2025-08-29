@@ -59,9 +59,9 @@ El formato para cada estudiante debe ser
 ##  Fecha: 2025-08-27
 
 ### Jeikel:
-- **¿Qué hice ayer?**:
-- **¿Qué haré hoy?**:
-- **¿Hay algo que me está bloqueando?**:
+- **¿Qué hice ayer?**: Realicé la lectura y limpieza de la base de datos, verificando que no existieran datos faltantes. Además, generé una tabla resumen de las variables numéricas con mínimos, cuantiles, máximos y promedios.
+- **¿Qué haré hoy?**: Ajustar y dar formato a la tabla resumen para que sea clara y fácil de interpretar, e integrar estos resultados en la documentación del proyecto.
+- **¿Hay algo que me está bloqueando?**: No tengo bloqueos en este momento; la base está limpia y la tabla de resumen ya se genera correctamente.
 
 ### Gabriel:
 - **¿Qué hice ayer?**:
