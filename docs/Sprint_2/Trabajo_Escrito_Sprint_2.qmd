@@ -54,7 +54,7 @@ El estudio de la estructura de dependencia mediante cópulas en los préstamos e
 
 ## Objetivos
 
-## Objetivo General
+### Objetivo General
 
 Analizar y comparar las dependencias estadísticas entre variables clave de los préstamos estudiantiles (como el número de préstamos, monto originado, monto desembolsado y número de beneficiarios) en universidades públicas y privadas, utilizando cópulas, con el fin de identificar patrones estructurales diferenciados en la distribución del crédito educativo.
 
@@ -109,7 +109,7 @@ Una cópula es una función de distribución conjunta con marginales uniformes e
 $$ H(x_1,...,x_d)=C(F_1(x_1),...,F_d(x_d)), $$
 y, recíprocamente, $C$ y las marginales determinan $H$ [@sklar1959]. Esta descomposición posibilita modelar por separado (i) las marginales (p. ej., lognormal o gamma para montos; Poisson/NegBin para conteos) y (ii) la estructura de dependencia [@joe2014].
 
-Familias de cópulas y dependencia de cola
+### Familias de cópulas y dependencia de cola
 
 Entre las familias más utilizadas se encuentran:
 
@@ -123,7 +123,7 @@ $$ \lambda_U = \lim_{x \to 1} Pr(U_2>u|U_1>u), $$
 $$ \lambda_L = \lim_{u \to 0} Pr(U_2 \leq u|U_1 \leq u) $$
 Estas métricas son clave en riesgo crediticio al capturar la probabilidad de co-movimientos extremos [@embrechts2003].
 
-Medidas de dependencia robustas
+### Medidas de dependencia robustas
 
 Para comparar sectores (público, privado sin fines de lucro y privado con fines de lucro) conviene emplear $\tau$ de Kendall y $\rho$ de Spearman, menos sensibles a escalas y atípicos que Pearson y, además, directamente vinculadas a parámetros de varias cópulas [@nelsen2006; @joe2014].
 
@@ -131,7 +131,7 @@ Estimación: marginales, PIT e inferencia para cópulas
 
 El flujo usual comprende: (1) ajustar marginales adecuadas a cada variable (montos, conteos); (2) transformar los datos mediante la probability integral transform (PIT) para obtener uniformes $U(0,1)$; y (3) estimar los parámetros de la cópula sobre estas uniformes [@rosenblatt1952; @nelsen2006]. En la práctica se usan esquemas de verosimilitud en dos etapas como Inference Functions for Margins (IFM) o pseudo-máxima verosimilitud con CDF empíricas/paramétricas, que son consistentes bajo condiciones amplias [@genest1995; @joe2014].
 
-Selección de modelos y pruebas de ajuste
+### Selección de modelos y pruebas de ajuste
 
 La comparación entre familias de cópulas se apoya en AIC y BIC [@akaike1974; @schwarz1978]. Para evaluar el ajuste se recomiendan pruebas basadas en el empirical copula process (estadísticos tipo Cramér–von Mises o Kolmogorov–Smirnov) con bootstrap, que muestran buen poder frente a alternativas plausibles en finanzas [@genest2009; @joe2014].
 
@@ -139,7 +139,7 @@ Extensiones multivariadas: cópulas en “vines”
 
 Al modelar simultáneamente varias variables (p. ej., número de préstamos, monto originado, monto desembolsado, número de beneficiarios), las pair-copula constructions (PCC) o vine cópulas (C-vine/D-vine) permiten construir dependencias multivariadas flexibles a partir de cópulas bivariadas [@bedford2002; @aas2009].
 
-Aplicaciones en finanzas y riesgo crediticio
+### Aplicaciones en finanzas y riesgo crediticio
 
 Las cópulas se han consolidado en gestión de riesgos para modelar pérdidas conjuntas, defaults correlacionados y colas conjuntas [@embrechts2003; @mcneil2015]. En crédito, la cópula gaussiana popularizó el modelado de correlaciones de default en carteras [@li2000], mientras que la cópula t y varias archimedeanas han destacado por capturar eventos extremos conjuntos. En el contexto de préstamos estudiantiles, estos marcos permiten contrastar si la estructura de dependencia entre variables operativas (montos, conteos, beneficiarios) difere por tipo de institución, aportando evidencia para la gestión del riesgo, el diseño de políticas y la equidad en el acceso.
 
