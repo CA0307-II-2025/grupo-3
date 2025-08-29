@@ -48,14 +48,6 @@ Incluye completar la limpieza final de datos, documentar la estructura de la bas
 
 # ⏳  Daily
 
-El formato para cada estudiante debe ser
-
-- **¿Qué hice ayer?**: _Describir brevemente las tareas completadas ayer, vinculadas a historias (ej: "Implementé la función de limpieza y escribí test para valores faltantes")._
-- **¿Qué haré hoy?**: _Enumerar foco de hoy (ej: "Integrar resultados descriptivos en el reporte y comenzar prueba de hipótesis")._
-- **¿Hay algo que me está bloqueando?**: _Listar obstáculos o dependencias (ej: "Falta confirmar el rango de años con PO" o "La librería X está dando un bug")._
-
-
-
 ##  Fecha: 2025-08-27
 
 ### Jeikel:
@@ -63,32 +55,13 @@ El formato para cada estudiante debe ser
 - **¿Qué haré hoy?**: Ajustar y dar formato a la tabla resumen para que sea clara y fácil de interpretar, e integrar estos resultados en la documentación del proyecto.
 - **¿Hay algo que me está bloqueando?**: No tengo bloqueos en este momento; la base está limpia y la tabla de resumen ya se genera correctamente.
 
-### Gabriel:
-- **¿Qué hice ayer?**:
-- **¿Qué haré hoy?**:
-- **¿Hay algo que me está bloqueando?**:
-
 ### Andy:
 - **¿Qué hice ayer?**: Nada.
 - **¿Qué haré hoy?**: Investigar
 - **¿Hay algo que me está bloqueando?**: No.
 
-### Diego:
-- **¿Qué hice ayer?**:
-- **¿Qué haré hoy?**:
-- **¿Hay algo que me está bloqueando?**:
 
 ##  Fecha: 2025-08-28
-
-### Jeikel:
-- **¿Qué hice ayer?**:
-- **¿Qué haré hoy?**:
-- **¿Hay algo que me está bloqueando?**:
-
-### Gabriel:
-- **¿Qué hice ayer?**:
-- **¿Qué haré hoy?**:
-- **¿Hay algo que me está bloqueando?**:
 
 ### Andy:
 - **¿Qué hice ayer?**: Investigar.
@@ -96,15 +69,14 @@ El formato para cada estudiante debe ser
 - **¿Hay algo que me está bloqueando?**: No.
 
 ### Diego:
-- **¿Qué hice ayer?**:
-- **¿Qué haré hoy?**:
-- **¿Hay algo que me está bloqueando?**:
+- **¿Qué hice ayer?**: Configuré mi entorno para poder ejecutar correctamente cualquier script .py sin depender del repositorio en VS Code
+- **¿Qué haré hoy?**: Revisaré que todos los módulos, chequeando que sean ejecutables y no den ningun tipo de error.
+- **¿Hay algo que me está bloqueando?**: La disponibilidad de tiempo ultimadamente es limitada
 
 
 
 
 # 🔍   Revisión en clase (Fecha: YYYY-MM-DD)
-
 
 
 ## 📈  Resultado mostrado
