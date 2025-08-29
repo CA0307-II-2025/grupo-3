@@ -1,0 +1,34 @@
+---
+title: "documentacion_base"
+author: "grupo_3"
+format: html
+editor: visual
+---
+
+# Documentación de la base de datos
+
+La base de datos proviene del sitio web oficial del Gobierno de los Estados Unidos <https://catalog.data.gov/dataset/national-student-loan-data-system-722b0> y es de acceso público. Contiene datos acerca de préstamos estudiantiles otorgados por distintas instituciones de educación superior en todo el país entre el 1 de abril de 2010 hasta el 30 de julio del mismo año. La base cuenta con 3793 observaciones, o sea, universidades distintas. Se tienen 4 tipos de préstamos, subsidiados y no subsidiados, según si la responsabilidad de pago la asume el estudiante o el padre del estudiante. Se cuenta con las siguientes variables:
+
+-   OPE ID: identificador único de la institución dentro de la Oficina de Educación Postsecundaria, OPE por sus siglas en inglés.
+
+-   School: Nombre de la universidad.
+
+-   State: Identificador de 2 letras del estado en el que se encuentra.
+
+-   ZIP: Código del sistema postal de Estados Unidos.
+
+-   School Type: Si la institución es pública o privada.
+
+Además cada tipo de préstamo tiene las siguientes variables:
+
+-   Recipients: La cantidad de personas que obtuvieron préstamos.
+
+-   \# of Loans Originated: El número de préstamos dados por la universidad.
+
+-   \$ of Loans Originated: El valor total en dólares estadounidenses de los préstamos dados.
+
+-   \# of Disbursments: Cantidad de desembolsos.
+
+-   \$ of Disbursements: Cantidad de dinero desembolsado.
+
+En el presente trabajo la variable School Type será de particular interés para lograr el objetivo.
