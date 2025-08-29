@@ -5,7 +5,6 @@ author:
   - "Andy Roberto Peralta Duarte <span style='font-size:1em; color:#555;'> | Carné: C25827 </span>"
   - "Gabriel Sanabria Alvarado <span style='font-size:1em; color:#555;'> | Carné: C27184 </span>"
   - "Diego Vega Víquez <span style='font-size:1em; color:#555;'> | Carné: C38367 </span>"
-
 date: today
 format:
   html:
