@@ -171,4 +171,3 @@ Al modelar simultáneamente varias variables (p. ej., número de préstamos, mon
 ### Aplicaciones en finanzas y riesgo crediticio
 
 Las cópulas se han consolidado en gestión de riesgos para modelar pérdidas conjuntas, defaults correlacionados y colas conjuntas [@embrechts2003; @mcneil2015]. En crédito, la cópula gaussiana popularizó el modelado de correlaciones de default en carteras [@li2000], mientras que la cópula t y varias archimedeanas han destacado por capturar eventos extremos conjuntos. En el contexto de préstamos estudiantiles, estos marcos permiten contrastar si la estructura de dependencia entre variables operativas (montos, conteos, beneficiarios) difere por tipo de institución, aportando evidencia para la gestión del riesgo, el diseño de políticas y la equidad en el acceso.
-
