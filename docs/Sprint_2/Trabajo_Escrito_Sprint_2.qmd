@@ -21,6 +21,7 @@ format:
     highlight-style: github
     title-block-banner-meta-font-size: 1.5em
     title-block-banner-divider: true
+    embed-resources: true
   pdf:
     documentclass: article
 lang: es
@@ -111,13 +112,13 @@ Una cópula es una función de distribución conjunta con marginales uniformes e
 $$ H(x_1,...,x_d)=C(F_1(x_1),...,F_d(x_d)), $$
 y, recíprocamente, $C$ y las marginales determinan $H$ [@sklar1959]. Esta descomposición posibilita modelar por separado (i) las marginales (p. ej., lognormal o gamma para montos; Poisson/NegBin para conteos) y (ii) la estructura de dependencia [@joe2014].
 
-Familias de cópulas y dependencia de cola
+### Familias de cópulas y dependencia de cola
 
 Entre las familias más utilizadas se encuentran:
 
-Elípticas: gaussiana (sin dependencia de cola) y t (colas pesadas y dependencia de cola superior e inferior positivas cuando $\nu$ es finito) [@mcneil2015].
+**Elípticas**: gaussiana (sin dependencia de cola) y t (colas pesadas y dependencia de cola superior e inferior positivas cuando $\nu$ es finito) [@mcneil2015].
 
-Archimedeanas: Clayton (cola inferior fuerte), Gumbel (cola superior fuerte), Frank (simétrica sin dependencia de cola) y Joe (cola superior marcada) [@nelsen2006; @joe2014].
+**Archimedeanas**: Clayton (cola inferior fuerte), Gumbel (cola superior fuerte), Frank (simétrica sin dependencia de cola) y Joe (cola superior marcada) [@nelsen2006; @joe2014].
 
 La dependencia de cola superior y inferior se definen como
 
@@ -125,32 +126,24 @@ $$ \lambda_U = \lim_{x \to 1} Pr(U_2>u|U_1>u), $$
 $$ \lambda_L = \lim_{u \to 0} Pr(U_2 \leq u|U_1 \leq u) $$
 Estas métricas son clave en riesgo crediticio al capturar la probabilidad de co-movimientos extremos [@embrechts2003].
 
-Medidas de dependencia robustas
+### Medidas de dependencia robustas
 
 Para comparar sectores (público, privado sin fines de lucro y privado con fines de lucro) conviene emplear $\tau$ de Kendall y $\rho$ de Spearman, menos sensibles a escalas y atípicos que Pearson y, además, directamente vinculadas a parámetros de varias cópulas [@nelsen2006; @joe2014].
 
-Estimación: marginales, PIT e inferencia para cópulas
+De acuerdo con [@rosenblatt1952; @nelsen2006] el proceso de estimación de cópulas generalmente sigue los siguientes pasos:
 
-El flujo usual comprende: (1) ajustar marginales adecuadas a cada variable (montos, conteos); (2) transformar los datos mediante la probability integral transform (PIT) para obtener uniformes $U(0,1)$; y (3) estimar los parámetros de la cópula sobre estas uniformes [@rosenblatt1952; @nelsen2006]. En la práctica se usan esquemas de verosimilitud en dos etapas como Inference Functions for Margins (IFM) o pseudo-máxima verosimilitud con CDF empíricas/paramétricas, que son consistentes bajo condiciones amplias [@genest1995; @joe2014].
+1. **Ajustar las distribuciones marginales** adecuadas para cada variable (por ejemplo, montos o conteos).
+2. **Transformar los datos** mediante la *probability integral transform* (PIT) para obtener variables con distribución uniforme $U(0,1)$.
+3. **Estimar los parámetros de la cópula** sobre los datos transformados.
 
-Selección de modelos y pruebas de ajuste
+Este procedimiento permite desacoplar la estructura marginal de la dependencia subyacente[@genest1995]. En la práctica, es común utilizar esquemas de estimación por verosimilitud en dos etapas, como el método de *Inference Functions for Margins* (IFM) o la pseudo-máxima verosimilitud, empleando funciones de distribución acumulada (CDF) empíricas o paramétricas. Estos métodos son consistentes bajo condiciones generales [ @joe2014].
 
-La comparación entre familias de cópulas se apoya en AIC y BIC [@akaike1974; @schwarz1978]. Para evaluar el ajuste se recomiendan pruebas basadas en el empirical copula process (estadísticos tipo Cramér–von Mises o Kolmogorov–Smirnov) con bootstrap, que muestran buen poder frente a alternativas plausibles en finanzas [@genest2009; @joe2014].
+### Selección de modelos y pruebas de ajuste
 
-Extensiones multivariadas: cópulas en “vines”
+La comparación entre familias de cópulas se apoya en el *Criterio de Información de Akaike (AIC)* y el *Criterio de Información Bayesiano (BIC)* [@akaike1974; @schwarz1978]. Para evaluar el ajuste se recomiendan pruebas basadas en el empirical copula process (estadísticos tipo Cramér–von Mises o Kolmogorov–Smirnov) con bootstrap, que muestran buen poder frente a alternativas plausibles en finanzas [@genest2009; @joe2014].
 
-Al modelar simultáneamente varias variables (p. ej., número de préstamos, monto originado, monto desembolsado, número de beneficiarios), las pair-copula constructions (PCC) o vine cópulas (C-vine/D-vine) permiten construir dependencias multivariadas flexibles a partir de cópulas bivariadas [@bedford2002; @aas2009].
-
-Aplicaciones en finanzas y riesgo crediticio
+Al modelar simultáneamente varias variables (p. ej., número de préstamos, monto originado, monto desembolsado, número de beneficiarios), las *pair-copula constructions (PCC)* o vine *cópulas (C-vine/D-vine)* permiten construir dependencias multivariadas flexibles a partir de cópulas bivariadas [@bedford2002; @aas2009].
 
 Las cópulas se han consolidado en gestión de riesgos para modelar pérdidas conjuntas, defaults correlacionados y colas conjuntas [@embrechts2003; @mcneil2015]. En crédito, la cópula gaussiana popularizó el modelado de correlaciones de default en carteras [@li2000], mientras que la cópula t y varias archimedeanas han destacado por capturar eventos extremos conjuntos. En el contexto de préstamos estudiantiles, estos marcos permiten contrastar si la estructura de dependencia entre variables operativas (montos, conteos, beneficiarios) difere por tipo de institución, aportando evidencia para la gestión del riesgo, el diseño de políticas y la equidad en el acceso.
 
-
-
 ## Referencias
-
-- @usdoe2010: U.S. Department of Education. (2010). *Federal Student Aid Annual Report 2010*. Washington, D.C.: U.S. Department of Education. Recuperado de: https://studentaid.gov/sites/default/files/fsa_annual_report_2009.pdf
-
-- @usdoe2012: U.S. Department of Education. (2012). *Federal Family Education Loan Program: Annual Reports and Data*. Federal Student Aid. Recuperado de: https://studentaid.gov
-
-- @usdoe2023: U.S. Department of Education. (2023). *National Student Loan Data System – Catalog*. Data.gov. Recuperado de: https://catalog.data.gov/dataset/national-student-loan-data-system-722b0
