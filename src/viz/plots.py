@@ -178,3 +178,81 @@ def plot_top_states_by_subsidized_loans(df, savepath, top_n=10):
     plt.xlabel("Monto total (USD)")
     plt.tight_layout()
     plt.savefig(savepath)
+
+
+def plot_institutions_by_state(df, savepath):
+    """
+    Gráfico de barras con el número de instituciones por estado.
+    """
+    counts = df["State"].value_counts()
+
+    plt.figure(figsize=(12, 6))
+    counts.plot(kind="bar", color="steelblue", edgecolor="black")
+    plt.xticks(rotation=90)
+    plt.title("Número de instituciones por Estado")
+    plt.xlabel("Estado")
+    plt.ylabel("Número de instituciones")
+    plt.tight_layout()
+    plt.savefig(savepath)
+    plt.close()
+
+
+def plot_institutions_by_type(df, savepath):
+    """
+    Gráfico de barras con la distribución de instituciones por tipo (Public/Private/etc).
+    """
+    counts = df["School Type"].value_counts()
+
+    plt.figure(figsize=(6, 4))
+    counts.plot(kind="bar", color="darkorange", edgecolor="black")
+    plt.title("Distribución por Tipo de Institución")
+    plt.xlabel("Tipo de Institución")
+    plt.ylabel("Número de instituciones")
+    plt.tight_layout()
+    plt.savefig(savepath)
+    plt.close()
+
+
+def plot_scatter_subsidized_vs_disbursements(df, savepath):
+    """
+    Diagrama de dispersión entre préstamos subsidiados y desembolsos totales.
+    Se colorea según el tipo de institución.
+    """
+    if "US $ of Disbursements" in df.columns and "FFEL SUBSIDIZED" in df.columns:
+        plt.figure(figsize=(8, 6))
+        types = df["School Type"].unique()
+
+        for t in types:
+            subset = df[df["School Type"] == t]
+            plt.scatter(
+                subset["FFEL SUBSIDIZED"],
+                subset["US $ of Disbursements"],
+                alpha=0.6,
+                label=t,
+            )
+
+        plt.title("Relación entre préstamos subsidiados y desembolsos")
+        plt.xlabel("FFEL SUBSIDIZED (USD)")
+        plt.ylabel("US $ of Disbursements (USD)")
+        plt.legend()
+        plt.grid(True, linestyle="--", alpha=0.5)
+        plt.tight_layout()
+        plt.savefig(savepath)
+        plt.close()
+
+
+def plot_correlation_heatmap(df, savepath):
+    """
+    Heatmap de correlación entre variables numéricas.
+    """
+    corr = df.corr(numeric_only=True)
+
+    plt.figure(figsize=(12, 8))
+    plt.imshow(corr, cmap="coolwarm", interpolation="nearest")
+    plt.colorbar(label="Correlación")
+    plt.xticks(range(len(corr.columns)), corr.columns, rotation=90)
+    plt.yticks(range(len(corr.columns)), corr.columns)
+    plt.title("Matriz de correlación entre variables numéricas")
+    plt.tight_layout()
+    plt.savefig(savepath)
+    plt.close()
