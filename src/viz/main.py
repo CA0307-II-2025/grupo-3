@@ -95,17 +95,17 @@ def main():
         df, savepath=outdir / "top_states_subsidized_loans.png"
     )
     plt.close()
-    
+
     plot_log_hist_unsubsidized_public(
         publicas, savepath=outdir / "hist_log_unsubsidized_public.png"
     )
     plt.close()
-    
+
     plot_log_hist_subsidized_private(
         privadas, savepath=outdir / "hist_log_subsidized_private.png"
     )
     plt.close()
-    
+
     plot_log_hist_subsidized_public(
         publicas, savepath=outdir / "hist_log_subsidized_public.png"
     )

@@ -109,7 +109,7 @@ def plot_hist_unsubsidized_private(df, savepath):
     plt.ylabel("Monto total (USD)")
     plt.tight_layout()
     plt.savefig(savepath)
-    
+
 
 def _safe_log10_series(s: pd.Series) -> pd.Series:
     """
@@ -125,8 +125,8 @@ def _safe_log10_series(s: pd.Series) -> pd.Series:
     x = np.log10(s)
     x = x.replace([np.inf, -np.inf], np.nan).dropna()
     return x
-    
-    
+
+
 def plot_log_hist_subsidized_public(df, savepath):
     """
     Histograma aplicando log10 a los préstamos subsidiados originados (monto) en universidades públicas.
@@ -135,8 +135,8 @@ def plot_log_hist_subsidized_public(df, savepath):
         df (pd.DataFrame): Datos de instituciones públicas.
         savepath (str o Path): Ruta donde guardar la imagen PNG.
     """
-    dataframe=_safe_log10_series(df["FFEL SUBSIDIZED $ of Loans Originated"])
-    
+    dataframe = _safe_log10_series(df["FFEL SUBSIDIZED $ of Loans Originated"])
+
     plt.figure(figsize=(10, 6))
     plt.hist(
         dataframe,
@@ -156,8 +156,8 @@ def plot_log_hist_subsidized_private(df, savepath):
     """
     Histograma aplicando log10 a los préstamos subsidiados originados (monto) en universidades privadas.
     """
-    dataframe=_safe_log10_series(df["FFEL SUBSIDIZED $ of Loans Originated"])
-    
+    dataframe = _safe_log10_series(df["FFEL SUBSIDIZED $ of Loans Originated"])
+
     plt.figure(figsize=(10, 6))
     plt.hist(
         dataframe,
@@ -177,8 +177,8 @@ def plot_log_hist_unsubsidized_public(df, savepath):
     """
     Histograma aplicando log10 a los préstamos NO subsidiados originados (monto) en universidades públicas.
     """
-    dataframe=_safe_log10_series(df["FFEL UNSUBSIDIZED $ of Loans Originated"])
-    
+    dataframe = _safe_log10_series(df["FFEL UNSUBSIDIZED $ of Loans Originated"])
+
     plt.figure(figsize=(10, 6))
     plt.hist(
         dataframe,
