@@ -1,0 +1,244 @@
+---
+title: "Comparación de la estructura de dependencia entre variables de préstamos estudiantiles en universidades públicas y privadas mediante cópulas"
+author:
+  - "Gabriel Sanabria Alvarado <span style='font-size:1em; color:#555;'> | Carné: C27184 </span>"
+  - "Diego Alberto Vega Víquez <span style='font-size:1em; color:#555;'> | Carné: C38367 </span>"
+  - "Jeikel Navarro Solís <span style='font-size:1em; color:#555;'> | Carné: C25518 </span>"
+  - "Andy Roberto Peralta Duarte  <span style='font-size:1em; color:#555;'> | Carné: C25827 </span>"
+date: today
+format:
+  pdf:
+    documentclass: article
+lang: es
+bibliography: referencias.bib
+---
+
+## Introducción
+
+El financiamiento de la educación superior ha sido siempre un aspecto vital para el acceso y la permanencia de los estudiantes en las universidades. En particular, los préstamos estudiantiles son una de las principales fuentes de recursos para cubrir los costos de matrícula y manutención, lo que genera un impacto directo en las condiciones financieras de los estudiantes y sus familias. La dinámica de estos préstamos no solo depende de los montos otorgados, también de la interacción entre múltiples variables, tales como la tasa de interés, el plazo, los ingresos familiares, el tipo de institución y las características socioeconómicas del solicitante.
+
+Bajo el contexto de esta investigación, resulta fundamental comprender cómo se relacionan estas variables en distintos sectores de la educación superior, tanto en las universidades públicas como en las privadas. Las dependencias entre variables financieras suelen presentar comportamientos no lineales y colas pesadas, lo que dificulta su caracterización mediante métodos estadísticos tradicionales basados únicamente en correlaciones lineales. Ante este desafío, las cópulas ofrecen una herramienta robusta para modelar y comparar estructuras de dependencia, al permitir describir con mayor precisión la forma en que interactúan las variables sin restringirse a supuestos de linealidad o normalidad.
+
+El *Federal Family Education Loan (FFEL) Program* fue uno de los principales mecanismos de financiamiento de la educación superior en Estados Unidos hasta su eliminación en 2010. Bajo este esquema, prestamistas privados originaban préstamos estudiantiles con garantía federal, lo que implicaba que el gobierno asumía parte del riesgo crediticio.
+
+Durante el año académico 2009-2010, el Departamento de Educación implementó medidas extraordinarias para sostener el flujo de crédito en el marco de la crisis financiera de 2008-2009. A través de la *Ensuring Continued Access to Student Loans Act (ECASLA)* se activaron programas de compra y participación de préstamos, mediante los cuales el gobierno adquirió directa o indirectamente alrededor de 60 mil millones de dólares en préstamos FFEL hacia octubre de 2010 [@usdoe2010].
+
+<!-- Hablada sobre la base de datos -->
+
+La base de datos *2009-2010 Award Year FFEL Volume by School – Award Year Quarterly Activity (04/01/2010-06/30/2010)”*, con fecha de procesamiento 4 de mayo de 2012, forma parte de los reportes administrativos que detallan, por institución, los volúmenes de préstamos otorgados bajo el programa FFEL. Estos registros permitían a las autoridades educativas monitorear el nivel de endeudamiento de los estudiantes según el tipo de institución.
+
+En marzo de 2010 se aprobó la *Health Care and Education Reconciliation Act*, que eliminó el FFEL Program y dispuso que a partir del 1º de julio de 2010 todos los nuevos préstamos federales se otorgaran únicamente bajo el *Federal Direct Loan Program*, en el que el financiamiento proviene directamente del gobierno federal [@usdoe2010; @usdoe2012].
+
+<!-- Justificación del uso de la metodología de las cópulas  -->
+
+El estudio de la estructura de dependencia mediante cópulas en los préstamos estudiantiles permite identificar diferencias significativas entre universidades públicas y privadas, lo cual aporta información valiosa para la gestión del riesgo crediticio, la formulación de políticas de financiamiento y la evaluación de la equidad en el acceso a la educación. De esta manera, la comparación de ambos sectores no solo tiene un interés académico y metodológico, sino también un impacto social y económico, al ofrecer evidencia empírica sobre los patrones de endeudamiento y las condiciones bajo las cuales los estudiantes acceden a recursos financieros.
+
+## Objetivos
+
+## Objetivo General
+
+Analizar y comparar las dependencias estadísticas entre variables clave de los préstamos estudiantiles (como el número de préstamos, monto originado, monto desembolsado y número de beneficiarios) en universidades públicas y privadas, utilizando cópulas, con el fin de identificar patrones estructurales diferenciados en la distribución del crédito educativo.
+
+### Objetivos Específicos
+
+ - Clasificar y caracterizar las instituciones educativas según su tipo (públicas, privadas y sin fines de lucro), y estimar las distribuciones marginales de las variables de interés relacionadas con los préstamos estudiantiles.
+
+ - Aplicar y ajustar modelos de cópulas para capturar y describir la estructura de dependencia entre las variables de préstamos estudiantiles, diferenciando por tipo de institución.
+
+ - Comparar de manera gráfica y numérica las cópulas ajustadas entre universidades públicas y privadas, evaluando si las diferencias observadas en las dependencias son estadísticamente significativas e implican cambios en el comportamiento del endeudamiento estudiantil.
+
+
+## Documentación de la base de datos
+
+La base de datos proviene del sitio web oficial del Gobierno de los Estados Unidos <https://catalog.data.gov/dataset/national-student-loan-data-system-722b0> y es de acceso público. Contiene datos acerca de préstamos estudiantiles otorgados por distintas instituciones de educación superior en todo el país entre el 1 de abril de 2010 hasta el 30 de julio del mismo año. La base cuenta con 3793 observaciones, o sea, universidades distintas. Se tienen 4 tipos de préstamos, subsidiados y no subsidiados, según si la responsabilidad de pago la asume el estudiante o el padre del estudiante. Se cuenta con las siguientes variables:
+
+-   OPE ID: identificador único de la institución dentro de la Oficina de Educación Postsecundaria, OPE por sus siglas en inglés.
+
+-   School: Nombre de la universidad.
+
+-   State: Identificador de 2 letras del estado en el que se encuentra.
+
+-   ZIP: Código del sistema postal de Estados Unidos.
+
+-   School Type: Si la institución es pública o privada.
+
+Además cada tipo de préstamo tiene las siguientes variables:
+
+-   Recipients: La cantidad de personas que obtuvieron préstamos.
+
+-   \# of Loans Originated: El número de préstamos dados por la universidad.
+
+-   \$ of Loans Originated: El valor total en dólares estadounidenses de los préstamos dados.
+
+-   \# of Disbursments: Cantidad de desembolsos.
+
+-   \$ of Disbursements: Cantidad de dinero desembolsado.
+
+En el presente trabajo la variable School Type será de particular interés para lograr el objetivo.
+
+### Análisis Descriptivo de la Base de Datos
+
+El conjunto de datos cuenta con 3,793 instituciones y 25 variables, entre identificadores, características de las instituciones (estado, tipo, código postal) y métricas asociadas a los distintos programas de préstamos (subsidizados, no subsidiados, Parent PLUS y Grad PLUS).
+
+En términos de valores faltantes, únicamente la variable *Zip Code* presenta 19 registros vacíos, lo cual representa un porcentaje mínimo (0.5%) y no compromete la representatividad del análisis. El resto de las variables se encuentra completo, lo que garantiza la solidez de las inferencias estadísticas.
+
+En el resumen estadístico de las variables numéricas se observa una marcada asimetría:
+
+\begin{itemize}
+\item La mayoría de instituciones tiene volúmenes reducidos de préstamos, pero existen casos extremos con montos muy elevados (ejemplo: hasta 419 millones USD en desembolsos subsidiados y 572 millones USD en desembolsos no subsidiados).
+
+\item Los valores de las medianas son mucho menores que los promedios, lo que confirma la presencia de outliers positivos que concentran gran parte del financiamiento.
+
+\item Programas como Parent PLUS y Grad PLUS muestran valores promedios reducidos en comparación con subsidizados y no subsidiados, evidenciando su menor participación en términos agregados.
+\end{itemize}
+
+Por último, la distribución por tipo de institución revela que:
+
+\begin{itemize}
+\item Privadas (1,311) y públicas (1,119) dominan el panorama.
+\item Les siguen las propietarias (1,011), lo cual destaca la presencia significativa de instituciones con fines de lucro en el mercado educativo.
+\item Existen también instituciones extranjeras (288 públicas y 60 privadas) y un pequeño número de for-profit internacionales (4 casos), lo que subraya el carácter global del sistema de préstamos estudiantiles.
+\end{itemize}
+En conjunto, estas estadísticas iniciales evidencian que el dataset es lo suficientemente amplio y detallado para explorar diferencias en el acceso y financiamiento entre estados, tipos de institución y modalidades de préstamo.
+
+La distribución de instituciones por estado muestra una fuerte concentración en algunos territorios como California, Florida, Pensilvania y Nueva York, que destacan por su tamaño poblacional y densidad universitaria. Este patrón sugiere que la oferta educativa se concentra en estados con mayor población estudiantil potencial y una tradición consolidada de educación superior. En contraste, estados pequeños como Wyoming, Delaware, Alaska y Guam cuentan con muy pocas instituciones reportadas.
+
+![](../../figs/institutions_by_state.png){fig-align="center" width="90%"}
+
+Cuando observamos la distribución por tipo de institución, los resultados reflejan un predominio de universidades privadas, seguidas por las públicas y en menor medida las propietarias. Esta composición resalta la relevancia del sector privado en el sistema universitario estadounidense, aunque también evidencia la presencia significativa de instituciones públicas que garantizan acceso masivo a la educación.
+
+![](../../figs/institutions_by_type.png){fig-align="center" width="70%"}
+
+Finalmente, la matriz de correlación de variables numéricas permite identificar relaciones estrechas entre el número de receptores, el monto originado y el monto desembolsado en las diferentes modalidades de préstamos (subsidizados, no subsidiados, Parent PLUS y Grad PLUS). Las correlaciones altas confirman que las dinámicas de originación y desembolso están fuertemente vinculadas, lo que implica que los estados y tipos de institución con mayor capacidad de originación también concentran mayores desembolsos.
+
+![](../../figs/correlation_heatmap.png){fig-align="center" width="100%"}
+
+### Análisis descriptivo diferenciado por tipo de institución
+
+Para profundizar en las diferencias estructurales entre instituciones, se calcularon estadísticas diferenciadas por **tipo de universidad**. El interés radica en observar cómo varían los montos, el número de receptores y los patrones de desembolso en universidades públicas, privadas, propietarias y extranjeras.
+
+```{python}
+#| echo: false
+import pandas as pd
+import numpy as np
+
+# Cargar datos desde la ruta relativa
+df = pd.read_csv("../../data/clean/dashboard_2010_clean.csv")
+
+# Estadísticas descriptivas agrupadas por tipo de institución
+stats_by_type = df.groupby("School Type").agg({
+    "FFEL SUBSIDIZED Recipients": ["mean", "median", "max"],
+    "FFEL SUBSIDIZED $ of Loans Originated": ["mean", "median", "max"],
+    "FFEL UNSUBSIDIZED Recipients": ["mean", "median", "max"],
+    "FFEL UNSUBSIDIZED $ of Loans Originated": ["mean", "median", "max"],
+    "FFEL PARENT PLUS Recipients": ["mean", "median", "max"],
+    "FFEL PARENT PLUS $ of Loans Originated": ["mean", "median", "max"],
+    "FFEL GRAD PLUS Recipients": ["mean", "median", "max"],
+    "FFEL GRAD PLUS $ of Loans Originated": ["mean", "median", "max"],
+})
+stats_by_type.head()
+```
+
+Los resultados muestran que las instituciones propietarias (for-profit) concentran en promedio mayores montos en préstamos subsidiados y no subsidiados, mientras que las privadas tradicionales lideran en los programas Grad PLUS, donde captan más del 59% del total nacional. Las universidades públicas, aunque de menor participación en los préstamos más especializados, presentan medianas más elevadas, lo que indica una distribución menos sesgada.
+
+```{python}
+#| echo: false
+
+# Participación porcentual en el total de cada tipo de préstamo
+totals = df.groupby("School Type")[[
+    "FFEL SUBSIDIZED $ of Loans Originated",
+    "FFEL UNSUBSIDIZED $ of Loans Originated",
+    "FFEL PARENT PLUS $ of Loans Originated",
+    "FFEL GRAD PLUS $ of Loans Originated"
+]].sum()
+
+shares = totals.div(totals.sum(axis=0), axis=1) * 100
+shares
+```
+
+El cálculo de la participación relativa confirma que las instituciones propietarias dominan en los préstamos subsidizados y no subsidiados, mientras que las privadas sin fines de lucro concentran la mayor parte del financiamiento Grad PLUS, lo que refuerza la hipótesis de que el tipo de institución condiciona el acceso a determinadas modalidades de crédito.
+
+```{python}
+#| echo: false
+
+# Ratios desembolso/originación
+df["Ratio_Subsidized"] = df["FFEL SUBSIDIZED $ of Disbursements"] / df["FFEL SUBSIDIZED $ of Loans Originated"].replace(0, np.nan)
+df["Ratio_Unsubsidized"] = df["FFEL UNSUBSIDIZED $ of Disbursements"] / df["FFEL UNSUBSIDIZED $ of Loans Originated"].replace(0, np.nan)
+
+ratios_by_type = df.groupby("School Type")[["Ratio_Subsidized", "Ratio_Unsubsidized"]].mean()
+ratios_by_type
+```
+
+En cuanto a la eficiencia en el desembolso, los valores promedio muestran que los programas en universidades extranjeras presentan ratios muy elevados, lo que implica que casi la totalidad del crédito originado se desembolsa. En contraste, las universidades públicas y privadas en EE. UU. mantienen ratios más moderados, cercanos a 2, lo que refleja procesos de desembolso más regulados.
+
+```{python}
+#| echo: false
+
+# Outliers: instituciones en el 5% superior de préstamos originados
+q95 = df[[
+    "FFEL SUBSIDIZED $ of Loans Originated",
+    "FFEL UNSUBSIDIZED $ of Loans Originated"
+]].quantile(0.95)
+
+outliers = df[
+    (df["FFEL SUBSIDIZED $ of Loans Originated"] > q95["FFEL SUBSIDIZED $ of Loans Originated"]) |
+    (df["FFEL UNSUBSIDIZED $ of Loans Originated"] > q95["FFEL UNSUBSIDIZED $ of Loans Originated"])
+][["School", "State", "School Type",
+   "FFEL SUBSIDIZED $ of Loans Originated",
+   "FFEL UNSUBSIDIZED $ of Loans Originated"]]
+
+outliers.head(10)
+```
+
+El análisis de outliers evidencia que un reducido grupo de universidades —entre ellas la University of Phoenix y la Universal Technical Institute— concentra montos extraordinarios, llegando incluso a más de 223 millones de dólares en préstamos no subsidiados. Esta alta concentración es crucial para el análisis de dependencia, pues estos casos extremos pueden distorsionar las correlaciones tradicionales y justificar el uso de cópulas para modelar colas pesadas y no linealidades.
+
+## Marco Teórico
+
+### Dependencia entre variables y límites de la correlación lineal
+
+En finanzas y gestión de riesgo, las relaciones entre variables suelen ser no lineales, asimétricas y con colas pesadas. La correlación de Pearson captura solo dependencia lineal y puede ser poco informativa ante no linealidades o valores extremos. Por ello se recomiendan medidas basadas en rangos—como $\tau$ de Kendall y $\rho$ de Spearman—y enfoques que separan las marginales de la dependencia (cópulas) [@mcneil2015; @embrechts2003; @nelsen2006].
+
+### Cópulas y el teorema de Sklar
+
+Una cópula es una función de distribución conjunta con marginales uniformes en $[0,1]$ que permite “ensamblar” marginales univariadas para formar una distribución multivariada [@nelsen2006]. El Teorema de Sklar establece que para cualquier distribución multivariada $H$ con marginales $F_1,\dots,F_d$ existe una cópula $C$ tal que
+
+$$ H(x_1,...,x_d)=C(F_1(x_1),...,F_d(x_d)), $$
+y, recíprocamente, $C$ y las marginales determinan $H$ [@sklar1959]. Esta descomposición posibilita modelar por separado (i) las marginales (p. ej., lognormal o gamma para montos; Poisson/NegBin para conteos) y (ii) la estructura de dependencia [@joe2014].
+
+### Familias de cópulas y dependencia de cola
+
+Entre las familias más utilizadas se encuentran:
+
+**Elípticas**: gaussiana (sin dependencia de cola) y t (colas pesadas y dependencia de cola superior e inferior positivas cuando $\nu$ es finito) [@mcneil2015].
+
+**Archimedeanas**: Clayton (cola inferior fuerte), Gumbel (cola superior fuerte), Frank (simétrica sin dependencia de cola) y Joe (cola superior marcada) [@nelsen2006; @joe2014].
+
+La dependencia de cola superior y inferior se definen como
+
+$$ \lambda_U = \lim_{x \to 1} Pr(U_2>u|U_1>u), $$
+$$ \lambda_L = \lim_{u \to 0} Pr(U_2 \leq u|U_1 \leq u) $$
+Estas métricas son clave en riesgo crediticio al capturar la probabilidad de co-movimientos extremos [@embrechts2003].
+
+### Medidas de dependencia robustas
+
+Para comparar sectores (público, privado sin fines de lucro y privado con fines de lucro) conviene emplear $\tau$ de Kendall y $\rho$ de Spearman, menos sensibles a escalas y atípicos que Pearson y, además, directamente vinculadas a parámetros de varias cópulas [@nelsen2006; @joe2014].
+
+De acuerdo con [@rosenblatt1952; @nelsen2006] el proceso de estimación de cópulas generalmente sigue los siguientes pasos:
+
+1. **Ajustar las distribuciones marginales** adecuadas para cada variable (por ejemplo, montos o conteos).
+2. **Transformar los datos** mediante la *probability integral transform* (PIT) para obtener variables con distribución uniforme $U(0,1)$.
+3. **Estimar los parámetros de la cópula** sobre los datos transformados.
+
+Este procedimiento permite desacoplar la estructura marginal de la dependencia subyacente[@genest1995]. En la práctica, es común utilizar esquemas de estimación por verosimilitud en dos etapas, como el método de *Inference Functions for Margins* (IFM) o la pseudo-máxima verosimilitud, empleando funciones de distribución acumulada (CDF) empíricas o paramétricas. Estos métodos son consistentes bajo condiciones generales [ @joe2014].
+
+### Selección de modelos y pruebas de ajuste
+
+La comparación entre familias de cópulas se apoya en el *Criterio de Información de Akaike (AIC)* y el *Criterio de Información Bayesiano (BIC)* [@akaike1974; @schwarz1978]. Para evaluar el ajuste se recomiendan pruebas basadas en el empirical copula process (estadísticos tipo Cramér–von Mises o Kolmogorov–Smirnov) con bootstrap, que muestran buen poder frente a alternativas plausibles en finanzas [@genest2009; @joe2014].
+
+Al modelar simultáneamente varias variables (p. ej., número de préstamos, monto originado, monto desembolsado, número de beneficiarios), las *pair-copula constructions (PCC)* o vine *cópulas (C-vine/D-vine)* permiten construir dependencias multivariadas flexibles a partir de cópulas bivariadas [@bedford2002; @aas2009].
+
+Las cópulas se han consolidado en gestión de riesgos para modelar pérdidas conjuntas, defaults correlacionados y colas conjuntas [@embrechts2003; @mcneil2015]. En crédito, la cópula gaussiana popularizó el modelado de correlaciones de default en carteras [@li2000], mientras que la cópula t y varias archimedeanas han destacado por capturar eventos extremos conjuntos. En el contexto de préstamos estudiantiles, estos marcos permiten contrastar si la estructura de dependencia entre variables operativas (montos, conteos, beneficiarios) difere por tipo de institución, aportando evidencia para la gestión del riesgo, el diseño de políticas y la equidad en el acceso.
+
+
+
+## Referencias

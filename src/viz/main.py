@@ -17,6 +17,11 @@ from plots import (
     plot_loan_distribution_by_school_type,
     plot_scatter_recipients_vs_amount,
     plot_top_states_by_subsidized_loans,
+    # nuevos
+    plot_institutions_by_state,
+    plot_institutions_by_type,
+    plot_scatter_subsidized_vs_disbursements,
+    plot_correlation_heatmap,
 )
 
 
@@ -87,6 +92,20 @@ def main():
     plot_top_states_by_subsidized_loans(
         df, savepath=outdir / "top_states_subsidized_loans.png"
     )
+    plt.close()
+
+    plot_institutions_by_state(df, savepath=outdir / "institutions_by_state.png")
+    plt.close()
+
+    plot_institutions_by_type(df, savepath=outdir / "institutions_by_type.png")
+    plt.close()
+
+    plot_scatter_subsidized_vs_disbursements(
+        df, savepath=outdir / "scatter_subsidized_vs_disbursements.png"
+    )
+    plt.close()
+
+    plot_correlation_heatmap(df, savepath=outdir / "correlation_heatmap.png")
     plt.close()
 
 
