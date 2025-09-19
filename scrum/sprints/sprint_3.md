@@ -47,10 +47,10 @@ El formato para cada estudiante debe ser
 
 ##  Fecha: YYYY-MM-DD
 
-### Estudiante A:
-- **¿Qué hice ayer?**:
-- **¿Qué haré hoy?**:
-- **¿Hay algo que me está bloqueando?**:
+### Estudiante A: Jeikel Navarro Solis
+- **¿Qué hice ayer?**: Ayer implementé la transformación segura a log10 y generé los histogramas (subsidizados público/privado y no subsidiados público) integrándolos al main.py
+- **¿Qué haré hoy?**: Homologar títulos/etiquetas y coloreado para mantener un estilo uniforme entre los tres histogramas log10. Revisar que las rutas de guardado y el import del módulo funcionen de forma consistente.
+- **¿Hay algo que me está bloqueando?**: Definir la regla de bins por defecto (FD vs. fijo) para no “sub-binnear/sobre-binnear” en log10.
 
 ### Estudiante B:
 - **¿Qué hice ayer?**:
