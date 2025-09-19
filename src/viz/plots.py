@@ -109,6 +109,86 @@ def plot_hist_unsubsidized_private(df, savepath):
     plt.ylabel("Monto total (USD)")
     plt.tight_layout()
     plt.savefig(savepath)
+    
+    
+def _safe_log10_series(s: pd.Series) -> pd.Series:
+    """
+    Aplica log10 a valores positivos (x > 0).
+
+    Retorna una Serie en escala log10 con índice preservado.
+    """
+    s = pd.to_numeric(s, errors="coerce")
+    s = s.replace([np.inf, -np.inf], np.nan).dropna()
+    s = s[s > 0]
+    if s.empty:
+        return s.astype(float)
+    x = np.log10(s)
+    x = x.replace([np.inf, -np.inf], np.nan).dropna()
+    return x
+    
+    
+def plot_log_hist_subsidized_public(df, savepath):
+    """
+    Histograma aplicando log10 a los préstamos subsidiados originados (monto) en universidades públicas.
+
+    """
+    dataframe=_safe_log10_series(df["FFEL SUBSIDIZED $ of Loans Originated"])
+    
+    plt.figure(figsize=(10, 6))
+    plt.hist(
+        dataframe,
+        bins=100,
+        color="skyblue",
+        edgecolor="black",
+    )
+    plt.title("Préstamos subsidiados originados (Log) - Instituciones públicas")
+    plt.xlabel("Log(Monto de préstamos originados (USD))")
+    plt.ylabel("Frecuencia")
+    plt.grid(True, linestyle="--", alpha=0.5)
+    plt.tight_layout()
+    plt.savefig(savepath)
+
+
+def plot_log_hist_subsidized_private(df, savepath):
+    """
+    Histograma aplicando log10 a los préstamos subsidiados originados (monto) en universidades privadas.
+    """
+    dataframe=_safe_log10_series(df["FFEL SUBSIDIZED $ of Loans Originated"])
+    
+    plt.figure(figsize=(10, 6))
+    plt.hist(
+        dataframe,
+        bins=100,
+        color="orange",
+        edgecolor="black",
+    )
+    plt.title("Préstamos subsidiados originados (Log) - Instituciones privadas")
+    plt.xlabel("Log(Monto de préstamos originados (USD))")
+    plt.ylabel("Frecuencia")
+    plt.grid(True, linestyle="--", alpha=0.5)
+    plt.tight_layout()
+    plt.savefig(savepath)
+
+
+def plot_log_hist_unsubsidized_public(df, savepath):
+    """
+    Histograma aplicando log10 a los préstamos NO subsidiados originados (monto) en universidades públicas.
+    """
+    dataframe=_safe_log10_series(df["FFEL UNSUBSIDIZED $ of Loans Originated"])
+    
+    plt.figure(figsize=(10, 6))
+    plt.hist(
+        dataframe,
+        bins=100,
+        color="green",
+        edgecolor="black",
+    )
+    plt.title("Préstamos no subsidiados originados (Log) - Instituciones públicas")
+    plt.xlabel("Log(Monto de préstamos originados (USD))")
+    plt.ylabel("Frecuencia")
+    plt.grid(True, linestyle="--", alpha=0.5)
+    plt.tight_layout()
+    plt.savefig(savepath)
 
 
 def _safe_log10_series(s: pd.Series) -> pd.Series:
@@ -340,3 +420,69 @@ def plot_correlation_heatmap(df, savepath):
     plt.tight_layout()
     plt.savefig(savepath)
     plt.close()
+    
+
+def plot_box_log_unsubsidized_public(df, savepath, showfliers=True):
+    """
+    Boxplot (log10) de préstamos NO subsidiados originados en universidades PÚBLICAS.
+    """
+    col = _safe_log10_series(df["FFEL UNSUBSIDIZED $ of Loans Originated"])
+
+    plt.figure(figsize=(10, 6))
+
+    plt.boxplot(
+        col,
+        vert=True,
+        patch_artist=True,
+        showfliers=showfliers
+    )
+
+    plt.title("Boxplot préstamos NO subsidiados originados (Log) - Instituciones públicas")
+    plt.ylabel("Log(Monto de préstamos originados (USD))")
+    plt.grid(True, linestyle="--", alpha=0.5)
+    plt.tight_layout()
+    plt.savefig(savepath)
+    
+    
+def plot_box_log_subsidized_public(df, savepath, showfliers=True):
+    """
+    Boxplot (log10) de préstamos préstamos subsidiados originados (monto) en universidades públicas.
+
+    Parámetros:
+        df (pd.DataFrame): Datos de instituciones públicas.
+        savepath (str o Path): Ruta donde guardar la imagen PNG.
+    """
+    col=_safe_log10_series(df["FFEL SUBSIDIZED $ of Loans Originated"])
+    plt.boxplot(
+        col,
+        vert=True,
+        patch_artist=True,
+        showfliers=showfliers
+    )
+
+    plt.title("Boxplot préstamos subsidiados originados (Log) - Instituciones públicas")
+    plt.ylabel("Log(Monto de préstamos originados (USD))")
+    plt.grid(True, linestyle="--", alpha=0.5)
+    plt.tight_layout()
+    plt.savefig(savepath)
+
+
+def plot_box_log_subsidized_private(df, savepath, showfliers=True):
+    """
+    Boxplot (log10) de préstamos préstamos subsidiados originados (monto) en universidades privadas.
+    """
+    col=_safe_log10_series(df["FFEL SUBSIDIZED $ of Loans Originated"])
+    
+    plt.boxplot(
+        col,
+        vert=True,
+        patch_artist=True,
+        showfliers=showfliers
+    )
+
+    plt.title("Boxplot préstamos subsidiados originados (Log) - Instituciones privadas")
+    plt.ylabel("Log(Monto de préstamos originados (USD))")
+    plt.grid(True, linestyle="--", alpha=0.5)
+    plt.tight_layout()
+    plt.savefig(savepath)
+

@@ -20,6 +20,16 @@ from plots import (
     plot_log_hist_unsubsidized_public,
     plot_log_hist_subsidized_private,
     plot_log_hist_subsidized_public,
+    plot_institutions_by_state,
+    plot_institutions_by_type,
+    plot_scatter_subsidized_vs_disbursements,
+    plot_correlation_heatmap,
+    plot_log_hist_unsubsidized_public,
+    plot_log_hist_subsidized_private,
+    plot_log_hist_subsidized_public,
+    plot_box_log_unsubsidized_public, 
+    plot_box_log_subsidized_private,
+    plot_box_log_subsidized_public,
 )
 
 
@@ -91,6 +101,26 @@ def main():
         df, savepath=outdir / "top_states_subsidized_loans.png"
     )
     plt.close()
+    
+    plot_institutions_by_state(
+        df, savepath=outdir / "institutions_by_state.png"
+        )
+    plt.close()
+
+    plot_institutions_by_type(
+        df, savepath=outdir / "institutions_by_type.png"
+        )
+    plt.close()
+
+    plot_scatter_subsidized_vs_disbursements(
+        df, savepath=outdir / "scatter_subsidized_vs_disbursements.png"
+    )
+    plt.close()
+
+    plot_correlation_heatmap(   
+        df, savepath=outdir / "correlation_heatmap.png"
+        )
+    plt.close()
 
     plot_log_hist_unsubsidized_public(
         publicas, savepath=outdir / "hist_log_unsubsidized_public.png"
@@ -103,6 +133,36 @@ def main():
     plt.close()
 
     plot_log_hist_subsidized_public(
+        publicas, savepath=outdir / "hist_log_subsidized_public.png"
+    )
+    plt.close()
+    
+    plot_log_hist_unsubsidized_public(
+        publicas, savepath=outdir / "hist_log_unsubsidized_public.png"
+    )
+    plt.close()
+    
+    plot_log_hist_subsidized_private(
+        privadas, savepath=outdir / "hist_log_subsidized_private.png"
+    )
+    plt.close()
+    
+    plot_box_log_unsubsidized_public(
+        publicas, savepath=outdir / "boxplot_log_unsubsidized_public.png"
+    )
+    plt.close()
+    
+    plot_log_hist_subsidized_public(
+        publicas, savepath=outdir / "hist_log_subsidized_public.png"
+    )
+    plt.close()
+
+    plot_box_log_subsidized_private(
+        privadas, savepath=outdir / "boxplot_log_subsidized_private.png"
+    )
+    plt.close()
+    
+    plot_box_log_subsidized_public(
         publicas, savepath=outdir / "hist_log_subsidized_public.png"
     )
     plt.close()
