@@ -22,6 +22,7 @@ from plots import (
     plot_log_hist_subsidized_public,
     plot_distribution_by_institution_type,
     plot_scatter_log_recipients_vs_originated,
+<<<<<<< HEAD
     # nuevos
     plot_institutions_by_state,
     plot_institutions_by_type,
@@ -29,6 +30,8 @@ from plots import (
     plot_correlation_heatmap,
     plot_distribution_by_institution_type,
     plot_scatter_log_recipients_vs_originated,
+=======
+>>>>>>> de7962c (feat: agrega los gráficos para el sprint 4 (sin PDF grande))
 )
 
 
@@ -103,6 +106,7 @@ def main():
 
     plot_log_hist_unsubsidized_public(
         publicas, savepath=outdir / "hist_log_unsubsidized_public.png"
+<<<<<<< HEAD
     )
     plt.close()
 
@@ -138,12 +142,24 @@ def main():
 
     plot_scatter_subsidized_vs_disbursements(
         df, savepath=outdir / "scatter_subsidized_vs_disbursements.png"
+=======
+>>>>>>> de7962c (feat: agrega los gráficos para el sprint 4 (sin PDF grande))
     )
     plt.close()
 
-    plot_correlation_heatmap(df, savepath=outdir / "correlation_heatmap.png")
+    plot_log_hist_subsidized_private(
+        privadas, savepath=outdir / "hist_log_subsidized_private.png"
+    )
     plt.close()
 
+<<<<<<< HEAD
+=======
+    plot_log_hist_subsidized_public(
+        publicas, savepath=outdir / "hist_log_subsidized_public.png"
+    )
+    plt.close()
+
+>>>>>>> de7962c (feat: agrega los gráficos para el sprint 4 (sin PDF grande))
     # Gráfico 2: Distribución por tipo (Gráfico del Sprint)
     plot_distribution_by_institution_type(
         df,
