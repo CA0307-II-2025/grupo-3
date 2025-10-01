@@ -17,11 +17,11 @@ from plots import (
     plot_loan_distribution_by_school_type,
     plot_scatter_recipients_vs_amount,
     plot_top_states_by_subsidized_loans,
-    # nuevos
-    plot_institutions_by_state,
-    plot_institutions_by_type,
-    plot_scatter_subsidized_vs_disbursements,
-    plot_correlation_heatmap,
+    plot_log_hist_unsubsidized_public,
+    plot_log_hist_subsidized_private,
+    plot_log_hist_subsidized_public,
+    plot_distribution_by_institution_type,
+    plot_scatter_log_recipients_vs_originated,
 )
 
 
@@ -94,19 +94,34 @@ def main():
     )
     plt.close()
 
-    plot_institutions_by_state(df, savepath=outdir / "institutions_by_state.png")
-    plt.close()
-
-    plot_institutions_by_type(df, savepath=outdir / "institutions_by_type.png")
-    plt.close()
-
-    plot_scatter_subsidized_vs_disbursements(
-        df, savepath=outdir / "scatter_subsidized_vs_disbursements.png"
+    plot_log_hist_unsubsidized_public(
+        publicas, savepath=outdir / "hist_log_unsubsidized_public.png"
     )
     plt.close()
 
-    plot_correlation_heatmap(df, savepath=outdir / "correlation_heatmap.png")
+    plot_log_hist_subsidized_private(
+        privadas, savepath=outdir / "hist_log_subsidized_private.png"
+    )
     plt.close()
+
+    plot_log_hist_subsidized_public(
+        publicas, savepath=outdir / "hist_log_subsidized_public.png"
+    )
+    plt.close()
+
+    # Gráfico 2: Distribución por tipo (Gráfico del Sprint)
+    plot_distribution_by_institution_type(
+        df,
+        savepath=outdir / "fig_S4_02_distribution_violin.png",
+        variable="$originated",  # o "$disbursed" si se desea
+        use_violin=True,  # cambia a False si prefiere boxplot
+    )
+    plt.close()
+
+    # Gráfico 3: Dispersión log–log con tendencia (Gráfico del Sprint)
+    plot_scatter_log_recipients_vs_originated(
+        df, savepath=outdir / "fig_S4_03_scatter.png", use_loess=False
+    )
 
 
 if __name__ == "__main__":
