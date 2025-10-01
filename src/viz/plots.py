@@ -340,3 +340,150 @@ def plot_correlation_heatmap(df, savepath):
     plt.tight_layout()
     plt.savefig(savepath)
     plt.close()
+
+
+def plot_distribution_by_institution_type(
+    df, savepath, variable="$originated", use_violin=True
+):
+    """
+    Boxplot o violin plot de la distribución de montos por tipo de institución, en escala log10.
+
+    Parámetros:
+        df (pd.DataFrame): DataFrame con columna 'School Type' y variable monetaria.
+        savepath (str o Path): Ruta donde guardar la imagen.
+        variable (str): Puede ser "$originated" o "$disbursed".
+        use_violin (bool): Si True usa violin plot, si False usa boxplot.
+    """
+    import seaborn as sns
+
+    # Mapear nombre corto a variable de columna
+    column_map = {
+        "$originated": "FFEL SUBSIDIZED $ of Loans Originated",
+        "$disbursed": "FFEL SUBSIDIZED $ of Disbursements",
+    }
+
+    if variable not in column_map:
+        raise ValueError("variable debe ser '$originated' o '$disbursed'")
+
+    col = column_map[variable]
+    df = df.copy()
+
+    # Filtrar valores positivos y aplicar log10
+    df["Monto log10"] = _safe_log10_series(df[col])
+    df = df[["School Type", "Monto log10"]].dropna()
+
+    plt.figure(figsize=(10, 6))
+    if use_violin:
+        sns.violinplot(
+            data=df, x="School Type", y="Monto log10", inner="box", palette="Set2"
+        )
+    else:
+        sns.boxplot(data=df, x="School Type", y="Monto log10", palette="Set2")
+
+    tipo = "Violin" if use_violin else "Box"
+    titulo = f"{tipo} plot del monto {'originado' if variable == '$originated' else 'desembolsado'} (log) por tipo de institución"
+    plt.title(titulo)
+    plt.xlabel("Tipo de institución")
+    plt.ylabel("Log10(Monto en USD)")
+    plt.grid(True, linestyle="--", alpha=0.5)
+
+    # Pie de figura descriptivo
+    plt.figtext(
+        0.5,
+        -0.1,
+        "Fuente: FFEL 2010. Se muestra la distribución logarítmica de montos por tipo de institución.\n"
+        "Medianas y dispersión (whiskers) indicadas en escala logarítmica. Solo préstamos subsidiados.",
+        ha="center",
+        fontsize=9,
+    )
+
+    plt.tight_layout()
+    plt.savefig(savepath)
+    plt.close()
+
+
+def plot_scatter_log_recipients_vs_originated(df, savepath, use_loess=True):
+    """
+    Gráfico doble:
+    - Izquierda: dispersión log–log entre receptores y monto originado, coloreado por tipo.
+    - Derecha: curvas de tendencia por tipo (LOESS si se puede, lineal si no).
+
+    Parámetros:
+        df (pd.DataFrame): DataFrame con columnas necesarias.
+        savepath (str o Path): Ruta donde guardar el gráfico.
+        use_loess (bool): Si True, intenta usar suavizado LOESS (requiere statsmodels).
+    """
+    import seaborn as sns
+    from matplotlib import pyplot as plt
+
+    # Preparar datos
+    col_x = "FFEL SUBSIDIZED Recipients"
+    col_y = "FFEL SUBSIDIZED $ of Loans Originated"
+    col_hue = "School Type"
+
+    df = df[[col_x, col_y, col_hue]].dropna()
+    df = df[(df[col_x] > 0) & (df[col_y] > 0)].copy()
+    df["log_x"] = np.log10(df[col_x])
+    df["log_y"] = np.log10(df[col_y])
+
+    tipos = df[col_hue].unique()
+    palette = sns.color_palette("Set2", n_colors=len(tipos))
+    color_dict = dict(zip(tipos, palette))
+
+    # Crear figura doble
+    fig, axs = plt.subplots(1, 2, figsize=(14, 6), sharex=True, sharey=True)
+
+    # -------- Panel 1: Dispersión
+    for tipo in tipos:
+        subset = df[df[col_hue] == tipo]
+        axs[0].scatter(
+            subset["log_x"],
+            subset["log_y"],
+            label=tipo,
+            alpha=0.6,
+            color=color_dict[tipo],
+        )
+    axs[0].set_title("Dispersión log–log por tipo de institución")
+    axs[0].set_xlabel("Log10(Número de receptores)")
+    axs[0].set_ylabel("Log10(Monto originado en USD)")
+    axs[0].grid(True, linestyle="--", alpha=0.5)
+    axs[0].legend()
+
+    # -------- Panel 2: Tendencias
+    for tipo in tipos:
+        subset = df[df[col_hue] == tipo]
+        if len(subset) >= 5:
+            sns.regplot(
+                data=subset,
+                x="log_x",
+                y="log_y",
+                scatter=False,
+                ax=axs[1],
+                label=tipo,
+                color=color_dict[tipo],
+                lowess=use_loess,  # esto requiere statsmodels si es True
+                line_kws={"linestyle": "--", "linewidth": 2},
+            )
+    axs[1].set_title("Curvas de tendencia por tipo")
+    axs[1].set_xlabel("Log10(Número de receptores)")
+    axs[1].grid(True, linestyle="--", alpha=0.5)
+    axs[1].legend()
+
+    # Pie de figura explicativo
+    fig.suptitle(
+        "Relación entre número de receptores y monto originado (FFEL Subsidized, log–log)",
+        fontsize=14,
+    )
+    fig.subplots_adjust(bottom=0.25, top=0.88)
+    fig.text(
+        0.5,
+        0.10,
+        "Panel izquierdo: puntos por institución. Panel derecho: curvas de tendencia por tipo (LOESS si disponible).\n"
+        "Se utilizan escalas logarítmicas en ambos ejes.",
+        ha="center",
+        fontsize=9,
+    )
+
+    plt.tight_layout()
+    plt.savefig(savepath)
+    plt.close()
