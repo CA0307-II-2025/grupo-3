@@ -20,13 +20,11 @@ from plots import (
     plot_log_hist_unsubsidized_public,
     plot_log_hist_subsidized_private,
     plot_log_hist_subsidized_public,
-<<<<<<< HEAD
+
     plot_institutions_by_state,
     plot_institutions_by_type,
     plot_scatter_subsidized_vs_disbursements,
     plot_correlation_heatmap,
-=======
->>>>>>> de7962c (feat: agrega los gráficos para el sprint 4 (sin PDF grande))
     plot_distribution_by_institution_type,
     plot_scatter_log_recipients_vs_originated,
 )
@@ -103,7 +101,7 @@ def main():
 
     plot_log_hist_unsubsidized_public(
         publicas, savepath=outdir / "hist_log_unsubsidized_public.png"
-<<<<<<< HEAD
+
     )
     plt.close()
 
@@ -130,6 +128,7 @@ def main():
     plot_scatter_log_recipients_vs_originated(
         df, savepath=outdir / "fig_S4_03_scatter.png", use_loess=False
     )
+
     plot_institutions_by_state(df, savepath=outdir / "institutions_by_state.png")
     plt.close()
 
@@ -138,8 +137,6 @@ def main():
 
     plot_scatter_subsidized_vs_disbursements(
         df, savepath=outdir / "scatter_subsidized_vs_disbursements.png"
-=======
->>>>>>> de7962c (feat: agrega los gráficos para el sprint 4 (sin PDF grande))
     )
     plt.close()
 
@@ -166,10 +163,6 @@ def main():
     plot_scatter_log_recipients_vs_originated(
         df, savepath=outdir / "fig_S4_03_scatter.png", use_loess=False
     )
-<<<<<<< HEAD
-=======
-
->>>>>>> de7962c (feat: agrega los gráficos para el sprint 4 (sin PDF grande))
 
 if __name__ == "__main__":
     main()
