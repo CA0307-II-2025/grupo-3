@@ -27,6 +27,8 @@ from plots import (
     plot_institutions_by_type,
     plot_scatter_subsidized_vs_disbursements,
     plot_correlation_heatmap,
+    plot_distribution_by_institution_type,
+    plot_scatter_log_recipients_vs_originated,
 )
 
 
@@ -141,6 +143,20 @@ def main():
 
     plot_correlation_heatmap(df, savepath=outdir / "correlation_heatmap.png")
     plt.close()
+
+    # Gráfico 2: Distribución por tipo (Gráfico del Sprint)
+    plot_distribution_by_institution_type(
+        df,
+        savepath=outdir / "fig_S4_02_distribution_violin.png",
+        variable="$originated",  # o "$disbursed" si se desea
+        use_violin=True,  # cambia a False si prefiere boxplot
+    )
+    plt.close()
+
+    # Gráfico 3: Dispersión log–log con tendencia (Gráfico del Sprint)
+    plot_scatter_log_recipients_vs_originated(
+        df, savepath=outdir / "fig_S4_03_scatter.png", use_loess=False
+    )
 
 
 if __name__ == "__main__":
