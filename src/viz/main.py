@@ -99,7 +99,6 @@ def main():
 
     plot_log_hist_unsubsidized_public(
         publicas, savepath=outdir / "hist_log_unsubsidized_public.png"
-
     )
     plt.close()
 
