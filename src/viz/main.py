@@ -20,7 +20,6 @@ from plots import (
     plot_log_hist_unsubsidized_public,
     plot_log_hist_subsidized_private,
     plot_log_hist_subsidized_public,
-
     plot_institutions_by_state,
     plot_institutions_by_type,
     plot_scatter_subsidized_vs_disbursements,
