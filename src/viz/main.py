@@ -25,9 +25,9 @@ from plots import (
     plot_scatter_subsidized_vs_disbursements,
     plot_distribution_by_institution_type,
     plot_scatter_log_recipients_vs_originated,
-    plot_correlation_heatmap_pearson, 
+    plot_correlation_heatmap_pearson,
     plot_correlation_heatmap_kendall,
-    plot_correlation_heatmap_spearman
+    plot_correlation_heatmap_spearman,
 )
 
 
@@ -149,27 +149,27 @@ def main():
         publicas, savepath=outdir / "hist_log_subsidized_public.png"
     )
     plt.close()
-    
+
     plot_distribution_by_institution_type(
         df,
         savepath=outdir / "fig_S4_02_distribution_violin.png",
-        variable="$originated",  
-        use_violin=True,  
+        variable="$originated",
+        use_violin=True,
     )
     plt.close()
 
     plot_scatter_log_recipients_vs_originated(
         df, savepath=outdir / "fig_S4_03_scatter.png", use_loess=False
     )
-    
+
     plot_correlation_heatmap_pearson(
         df, savepath=outdir / "correlacion_heatmap_pearson.png"
     )
-    
+
     plot_correlation_heatmap_kendall(
         df, savepath=outdir / "correlacion_heatmap_kendall.png"
     )
-    
+
     plot_correlation_heatmap_spearman(
         df, savepath=outdir / "correlacion_heatmap_spearman.png"
     )
