@@ -1,0 +1,20 @@
+---
+title: "Resultados Preliminares"
+author: "Roberto"
+output: html_document
+date: "2025-10-02"
+---
+
+# S04-06
+En la figura ## [análisis de la relación entre número de receptores y monto originado (en escala logarítmica)] se muestra una tendencia casi lineal en todas las instituciones, lo que sugiere una relación de exponencial entre ambas variables: a mayor número de beneficiarios, mayor es el monto total originado. Sin embargo, se observan diferencias por tipo de institución: las universidades públicas tienden a originar montos relativamente menores en comparación con privadas y con instituciones propietarias (proprietary), mientras que las instituciones extranjeras muestran mayor dispersión y niveles significativamente más altos de financiamiento por receptor. Esto revela heterogeneidades estructurales que pueden influir en cómo se distribuye el crédito educativo entre distintos sectores.
+
+La figura ## [La matriz de correlación] refuerza la idea de que dentro de cada programa de préstamos existe una fuerte dependencia entre las variables asociadas (número de receptores, préstamos originados y desembolsos), con coeficientes superiores a 0.8. Sin embargo, las correlaciones entre distintos programas (por ejemplo, subsidized vs. parent PLUS) son considerablemente menores, lo que indica que la intensidad del crédito otorgado por un tipo de programa no necesariamente se replica en otros. Esto sugiere que las universidades diversifican o especializan su acceso a líneas de crédito específicas, generando perfiles diferenciados según su estructura y tipo institucional.
+
+Luego, la fig ## [la distribución del monto originado por tipo de institución, visualizada mediante el violin plot] muestra patrones claros: las extranjeras con fines de lucro concentran los mayores montos con una dispersión muy baja, mientras que las extranjeras privadas y extranjeras públicas tienden a estar en los niveles más bajos de financiamiento. Las instituciones privadas, públicas y propietarias nacionales se concentran en un rango intermedio, con distribuciones más amplias y superpuestas. Este hallazgo evidencia que el tipo de institución no solo influye en la magnitud del crédito educativo, sino también en la variabilidad de los montos otorgados, lo cual puede ser clave para diferenciar patrones estructurales mediante el enfoque de cópulas. Además de la tabla 3 se puede apreciar una ligera tendencia a los préstamos subsidiados por parte de todas las instituciones.
+
+  * Existe una relación de tipo potencia entre número de beneficiarios y montos originados, con diferencias estructurales por tipo de institución: públicas con      montos menores, privadas y propietarias con montos mayores, y extranjeras con fines de lucro con niveles excepcionalmente altos.
+
+  * Dentro de cada programa de préstamos hay correlaciones muy fuertes entre sus variables clave, pero la dependencia entre diferentes programas es mucho más        débil, lo que sugiere especialización o diferenciación en el acceso a líneas de crédito.
+
+  * La distribución del financiamiento varía por tipo de institución: extranjeras con fines de lucro concentran montos altos y homogéneos, mientras que las          instituciones extranjeras públicas y privadas muestran niveles bajos, y las nacionales (públicas, privadas y propietarias) se ubican en rangos intermedios con mayor   dispersión.
+  
