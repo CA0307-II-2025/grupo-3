@@ -513,14 +513,6 @@ def plot_scatter_log_recipients_vs_originated(df, savepath, use_loess=True):
         fontsize=14,
     )
     fig.subplots_adjust(bottom=0.25, top=0.88)
-    fig.text(
-        0.5,
-        0.10,
-        "Panel izquierdo: puntos por institución. Panel derecho: curvas de tendencia por tipo (LOESS si disponible).\n"
-        "Se utilizan escalas logarítmicas en ambos ejes.",
-        ha="center",
-        fontsize=9,
-    )
 
     plt.tight_layout()
     plt.savefig(savepath)
