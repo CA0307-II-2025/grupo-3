@@ -103,15 +103,15 @@ En conjunto, estas estadísticas iniciales evidencian que el dataset es lo sufic
 
 La distribución de instituciones por estado muestra una fuerte concentración en algunos territorios como California, Florida, Pensilvania y Nueva York, que destacan por su tamaño poblacional y densidad universitaria. Este patrón sugiere que la oferta educativa se concentra en estados con mayor población estudiantil potencial y una tradición consolidada de educación superior. En contraste, estados pequeños como Wyoming, Delaware, Alaska y Guam cuentan con muy pocas instituciones reportadas.
 
-![](../../figs/institutions_by_state.png){fig-align="center" width="90%"}
+![](../../figs/institutions_by_state.png){#fig-state fig-align="center" width="90%"}
 
 Cuando observamos la distribución por tipo de institución, los resultados reflejan un predominio de universidades privadas, seguidas por las públicas y en menor medida las propietarias. Esta composición resalta la relevancia del sector privado en el sistema universitario estadounidense, aunque también evidencia la presencia significativa de instituciones públicas que garantizan acceso masivo a la educación.
 
 ![](../../figs/institutions_by_type.png){fig-align="center" width="70%"}
 
-Finalmente, la matriz de correlación de variables numéricas permite identificar relaciones estrechas entre el número de receptores, el monto originado y el monto desembolsado en las diferentes modalidades de préstamos (subsidizados, no subsidiados, Parent PLUS y Grad PLUS). Las correlaciones altas confirman que las dinámicas de originación y desembolso están fuertemente vinculadas, lo que implica que los estados y tipos de institución con mayor capacidad de originación también concentran mayores desembolsos.
+Finalmente, la matriz de correlación de variables numéricas permite identificar relaciones estrechas entre el número de receptores utilizando la **Tau de Kendall**, el monto originado y el monto desembolsado en las diferentes modalidades de préstamos (subsidizados, no subsidiados, Parent PLUS y Grad PLUS). Las correlaciones altas confirman que las dinámicas de originación y desembolso están fuertemente vinculadas, lo que implica que los estados y tipos de institución con mayor capacidad de originación también concentran mayores desembolsos.
 
-![](../../figs/correlation_heatmap.png){fig-align="center" width="100%"}
+![](../../figs/correlacion_heatmap_kendall.png){fig-align="center" width="100%"}
 
 ### Análisis descriptivo diferenciado por tipo de institución
 
@@ -181,7 +181,7 @@ df["Ratio_Unsubsidized"] = df["FFEL UNSUBSIDIZED $ of Disbursements"] / df["FFEL
 
 ratios_by_type = df.groupby("School Type")[["Ratio_Subsidized", "Ratio_Unsubsidized"]].mean()
 ratios_by_type.style \
-  .set_caption("PRelación entre monto originado y número de desembolsos por tipo de institución (Ratio de eficiencia en el desembolso).") \
+  .set_caption("Relación entre monto originado y número de desembolsos por tipo de institución (Ratio de eficiencia en el desembolso).") \
   .format({
     "Ratio_Subsidized": "{:.6f}",
     "Ratio_Unsubsidized": "{:.6f}"
@@ -251,6 +251,21 @@ Estas métricas son clave en riesgo crediticio al capturar la probabilidad de co
 ### Medidas de dependencia robustas
 
 Para comparar sectores (público, privado sin fines de lucro y privado con fines de lucro) conviene emplear $\tau$ de Kendall y $\rho$ de Spearman, menos sensibles a escalas y atípicos que Pearson y, además, directamente vinculadas a parámetros de varias cópulas [@nelsen2006; @joe2014].
+
+#### $\tau$ de Kendall
+
+Para dos variables aleatorias $X_1$ y $X_2$, según [@haugh2016] la $\tau$ de Kendall se define formalmente como:
+
+$$
+\rho_\tau(X_1,X_2) = \mathbb{E}\left[sign\left((X_1 - \overline{X_1})(X_2 - \overline{X_2})\right) \right]
+$$
+
+donde $(\overline{X_1},\overline{X_2})$ es independiente de $(X_1,X_2)$.
+
+Es decir, la $\tau$ de Kendall es una medida de dependencia basada en rangos, que evalúa concordancia/discordancia entre observaciones. Es robusta, invariante bajo transformaciones monótonas, y muy utilizada en la teoría de cópulas porque se relaciona directamente con los parámetros de muchas familias de cópulas.
+
+
+#### Proceso de estimación de cópulas
 
 De acuerdo con [@rosenblatt1952; @nelsen2006] el proceso de estimación de cópulas generalmente sigue los siguientes pasos:
 
