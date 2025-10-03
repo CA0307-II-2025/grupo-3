@@ -284,13 +284,13 @@ Al modelar simultáneamente varias variables (p. ej., número de préstamos, mon
 Las cópulas se han consolidado en gestión de riesgos para modelar pérdidas conjuntas, defaults correlacionados y colas conjuntas [@embrechts2003; @mcneil2015]. En crédito, la cópula gaussiana popularizó el modelado de correlaciones de default en carteras [@li2000], mientras que la cópula t y varias archimedeanas han destacado por capturar eventos extremos conjuntos. En el contexto de préstamos estudiantiles, estos marcos permiten contrastar si la estructura de dependencia entre variables operativas (montos, conteos, beneficiarios) difere por tipo de institución, aportando evidencia para la gestión del riesgo, el diseño de políticas y la equidad en el acceso.
 
 ## Limitaciones
-Un primer aspecto a considerar es la asimetría en la distribución de los datos, observable en la siguiente figura 
+Un primer aspecto a considerar es la asimetría en la distribución de los datos, observable en la siguiente figura
 
 ![](../../figs/fig_S4_02_distribution_box.png){fig-align="center" width="80%"}
 
 Las instituciones extranjeras con fines de lucro concentran valores muy elevados y homogéneos, mientras que las extranjeras públicas y extranjeras privadas se ubican en rangos bajos. Esta desigualdad genera distribuciones altamente sesgadas a la derecha, lo que puede afectar la estimación de parámetros de dependencia si se emplean directamente en su escala original. En contextos de modelación con cópulas, esta asimetría puede inducir a una sobreestimación de la dependencia en las colas superiores o a resultados inestables en el ajuste de las funciones de distribución marginal.
 
-Se presentan outliers institucionales que se reflejan en la dispersión de la figura 
+Se presentan outliers institucionales que se reflejan en la dispersión de la figura
 
 ![](../../figs/dispercion_log-log.png){fig-align="center" width="100%"}
 
