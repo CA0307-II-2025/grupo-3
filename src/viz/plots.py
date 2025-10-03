@@ -358,6 +358,22 @@ def plot_correlation_heatmap_kendall(df, savepath):
     plt.savefig(savepath)
     plt.close()
     
+def plot_correlation_heatmap_spearman(df, savepath):
+    """
+    Heatmap de correlación de spearman entre variables numéricas.
+    """
+    corr = df.corr(method="spearman", numeric_only=True)
+
+    plt.figure(figsize=(12, 8))
+    plt.imshow(corr, cmap="coolwarm", interpolation="nearest")
+    plt.colorbar(label="Correlación")
+    plt.xticks(range(len(corr.columns)), corr.columns, rotation=90)
+    plt.yticks(range(len(corr.columns)), corr.columns)
+    plt.title("Matriz de correlación entre variables numéricas utilizando Rho de Spearman")
+    plt.tight_layout()
+    plt.savefig(savepath)
+    plt.close()
+    
 
 def plot_distribution_by_institution_type(
     df, savepath, variable="$originated", use_violin=True

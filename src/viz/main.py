@@ -27,6 +27,7 @@ from plots import (
     plot_scatter_log_recipients_vs_originated,
     plot_correlation_heatmap_pearson, 
     plot_correlation_heatmap_kendall,
+    plot_correlation_heatmap_spearman
 )
 
 
@@ -163,6 +164,14 @@ def main():
     
     plot_correlation_heatmap_pearson(
         df, savepath=outdir / "correlacion_heatmap_pearson.png"
+    )
+    
+    plot_correlation_heatmap_kendall(
+        df, savepath=outdir / "correlacion_heatmap_kendall.png"
+    )
+    
+    plot_correlation_heatmap_spearman(
+        df, savepath=outdir / "correlacion_heatmap_spearman.png"
     )
 
 
