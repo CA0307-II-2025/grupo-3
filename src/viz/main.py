@@ -159,7 +159,7 @@ def main():
     plt.close()
 
     plot_scatter_log_recipients_vs_originated(
-        df, savepath=outdir / "fig_S4_03_scatter.png", use_loess=False
+        df, savepath=outdir / "dispercion_log-log.png", use_loess=False
     )
 
     plot_correlation_heatmap_pearson(
