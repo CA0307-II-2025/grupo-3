@@ -17,4 +17,3 @@ Luego, la fig ## [la distribución del monto originado por tipo de institución,
   * Dentro de cada programa de préstamos hay correlaciones muy fuertes entre sus variables clave, pero la dependencia entre diferentes programas es mucho más        débil, lo que sugiere especialización o diferenciación en el acceso a líneas de crédito.
 
   * La distribución del financiamiento varía por tipo de institución: extranjeras con fines de lucro concentran montos altos y homogéneos, mientras que las          instituciones extranjeras públicas y privadas muestran niveles bajos, y las nacionales (públicas, privadas y propietarias) se ubican en rangos intermedios con mayor   dispersión.
-  
