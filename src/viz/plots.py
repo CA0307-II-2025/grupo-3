@@ -325,9 +325,9 @@ def plot_scatter_subsidized_vs_disbursements(df, savepath):
         plt.close()
 
 
-def plot_correlation_heatmap(df, savepath):
+def plot_correlation_heatmap_pearson(df, savepath):
     """
-    Heatmap de correlación entre variables numéricas.
+    Heatmap de correlación de pearson entre variables numéricas.
     """
     corr = df.corr(numeric_only=True)
 
@@ -336,11 +336,28 @@ def plot_correlation_heatmap(df, savepath):
     plt.colorbar(label="Correlación")
     plt.xticks(range(len(corr.columns)), corr.columns, rotation=90)
     plt.yticks(range(len(corr.columns)), corr.columns)
-    plt.title("Matriz de correlación entre variables numéricas")
+    plt.title("Matriz de correlación entre variables numéricas utilizando Pearson")
     plt.tight_layout()
     plt.savefig(savepath)
     plt.close()
 
+
+def plot_correlation_heatmap_kendall(df, savepath):
+    """
+    Heatmap de correlación de kendall entre variables numéricas.
+    """
+    corr = df.corr(method="kendall", numeric_only=True)
+
+    plt.figure(figsize=(12, 8))
+    plt.imshow(corr, cmap="coolwarm", interpolation="nearest")
+    plt.colorbar(label="Correlación")
+    plt.xticks(range(len(corr.columns)), corr.columns, rotation=90)
+    plt.yticks(range(len(corr.columns)), corr.columns)
+    plt.title("Matriz de correlación entre variables numéricas utilizando Tau de Kendall")
+    plt.tight_layout()
+    plt.savefig(savepath)
+    plt.close()
+    
 
 def plot_distribution_by_institution_type(
     df, savepath, variable="$originated", use_violin=True
