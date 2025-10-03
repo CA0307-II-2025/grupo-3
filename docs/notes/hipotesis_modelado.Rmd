@@ -1,0 +1,99 @@
+---
+title: "Hipótesis Modelado"
+author: "Roberto"
+date: "2025-10-03"
+output: html_document
+---
+
+# S04-09
+
+## Hipótesis 1: Dependencia de cola superior entre número de beneficiarios y monto originado en instituciones privadas y propietarias
+
+Dado que la relación entre número de receptores y monto originado sigue un patrón de tipo potencia y se observa que en instituciones privadas y propietarias los montos tienden a ser relativamente más altos, se plantea que en estas instituciones existe una fuerte dependencia en la cola superior. Es decir, cuando el número de receptores alcanza valores extremos (muy altos), también el monto originado se incrementa de manera desproporcionada, manteniendo una asociación elevada en los valores más grandes.
+
+**Variables:**  
+- \(X\) = número de beneficiarios  
+- \(Y\) = monto originado  
+- Ambas se transforman a distribuciones marginales uniformes:  
+  \[
+  U = F_X(X), \quad V = F_Y(Y)
+  \]
+
+**Parámetro de interés:**  
+Coeficiente de dependencia de cola superior \(\lambda_U\), definido como:
+
+\[
+\lambda_U = \lim_{u\to 1^-} \Pr\big(Y>F_Y^{-1}(u)\mid X>F_X^{-1}(u)\big)
+\]
+
+o en términos de cópula \(C\):
+
+\[
+\lambda_U = \lim_{u\to1^-}\frac{1-2u+C(u,u)}{1-u}
+\]
+
+**Contrastes:**
+
+\[
+\begin{aligned}
+H_0 &: \lambda_U = 0 \quad\text{(no hay dependencia en la cola superior)} \\
+H_1 &: \lambda_U > 0 \quad\text{(existe dependencia en la cola superior)}
+\end{aligned}
+\]
+
+**Expectativa:** Rechazar \(H_0\) en instituciones *private/proprietary*, evidenciando co-extremos altos (muchos beneficiarios asociados a montos muy altos).  
+
+**Modelos sugeridos:** cópula de Gumbel (cola superior), cópula t (cola bilateral).
+
+## Hipótesis 2: Ausencia de dependencia de cola inferior entre programas distintos de préstamos estudiantiles
+
+La matriz de correlación muestra que, si bien dentro de cada programa las variables están altamente asociadas, entre programas diferentes la correlación es baja. Esto lleva a plantear que no existe una dependencia significativa en la cola inferior entre, por ejemplo, FFEL Subsidized y Parent PLUS: instituciones con niveles muy bajos de acceso a un programa no necesariamente presentan bajos niveles en los demás. En otras palabras, las instituciones pueden tener mínimos en un programa sin que ello implique simultáneamente mínimos en otros.
+
+**Variables:**  
+- \(X\) = monto (o número de préstamos) en programa A  
+- \(Y\) = monto (o número de préstamos) en programa B  
+- Transformadas a \(U, V\).
+
+**Parámetro de interés:**  
+Coeficiente de dependencia de cola inferior \(\lambda_L\), definido como:
+
+\[
+\lambda_L = \lim_{u\to 0^+} \Pr\big(Y\le F_Y^{-1}(u)\mid X\le F_X^{-1}(u)\big)
+\]
+
+o en cópula \(C\):
+
+\[
+\lambda_L = \lim_{u\to0^+}\frac{C(u,u)}{u}
+\]
+
+**Contrastes:**
+
+\[
+\begin{aligned}
+H_0 &: \lambda_L = 0 \quad\text{(no hay dependencia en la cola inferior)} \\
+H_1 &: \lambda_L > 0 \quad\text{(existe dependencia en la cola inferior)}
+\end{aligned}
+\]
+
+**Expectativa:** No rechazar \(H_0\), lo cual coincide con la baja correlación observada entre programas (ej. *FFEL Subsidized* vs *Parent PLUS*).  
+
+**Modelos sugeridos:** cópula de Clayton (cola inferior), cópula t como alternativa.
+
+---
+
+## Procedimiento de contraste
+
+1. **Submuestras**: separar por tipo institucional (ej. private/proprietary) o por pares de programas.  
+2. **Transformación marginal**: obtener \(U=F_X(X)\), \(V=F_Y(Y)\) mediante rangos empíricos o ajustes paramétricos.  
+3. **Estimación de \(\lambda\):**
+   - *No paramétrica*:  
+     \[
+     \widehat{\lambda}_U \approx \frac{\#\{U>u_0,\,V>u_0\}}{\#\{U>u_0\}}, \quad u_0 \in \{0.90, 0.95, 0.99\}
+     \]  
+     (análogamente para \(\widehat{\lambda}_L\) con umbrales cercanos a 0).  
+   - *Paramétrica*: ajustar cópulas (Gumbel/Clayton/t) y derivar \(\lambda\) analíticamente.  
+4. **Inferencia**: usar bootstrap (paramétrico o no paramétrico) para obtener intervalos de confianza y p-values.  
+   - Regla de decisión: rechazar \(H_0\) si IC de \(100(1-\alpha)\%\) para \(\lambda\) excluye 0 o si p-value \(<\alpha\) (\(\alpha=0.05\)).  
+5. **Robustez**: repetir con distintos umbrales y comparar ajustes (tests de bondad de ajuste, AIC/BIC, bootstrap de PIT residuals).  
+6. **Reporte**: presentar \(\widehat{\lambda}\), intervalos de confianza, p-values y modelo de cópula seleccionado por tipo de institución y programa.
