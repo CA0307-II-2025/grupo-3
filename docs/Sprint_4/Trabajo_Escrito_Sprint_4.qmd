@@ -37,15 +37,15 @@ El estudio de la estructura de dependencia mediante cópulas en los préstamos e
 
 ## Objetivo General
 
-Analizar y comparar las dependencias estadísticas entre variables clave de los préstamos estudiantiles (como el número de préstamos, monto originado, monto desembolsado y número de beneficiarios) en universidades públicas y privadas, utilizando cópulas, con el fin de identificar patrones estructurales diferenciados en la distribución del crédito educativo.
+Comparar las dependencias estadísticas entre variables clave de los préstamos estudiantiles —incluyendo número de préstamos, montos originados y desembolsados, así como el número de beneficiarios— en universidades públicas y privadas mediante el uso de cópulas, con el propósito de identificar patrones estructurales diferenciados en la distribución del crédito educativo.
 
 ### Objetivos Específicos
 
- - Clasificar y caracterizar las instituciones educativas según su tipo (públicas, privadas y sin fines de lucro), y estimar las distribuciones marginales de las variables de interés relacionadas con los préstamos estudiantiles.
+ - Determinar la dependencia bivariada y en colas entre variables clave de préstamos estudiantiles en universidades públicas y privadas.
 
- - Aplicar y ajustar modelos de cópulas para capturar y describir la estructura de dependencia entre las variables de préstamos estudiantiles, diferenciando por tipo de institución.
+ - Evaluar el ajuste de distintas familias de cópulas, comparando la intensidad y la posible asimetría en la estructura de dependencia.
 
- - Comparar de manera gráfica y numérica las cópulas ajustadas entre universidades públicas y privadas, evaluando si las diferencias observadas en las dependencias son estadísticamente significativas e implican cambios en el comportamiento del endeudamiento estudiantil.
+ - Discutir las implicaciones de los hallazgos para la gestión del riesgo financiero y el diseño de políticas públicas relacionadas con la educación superior.
 
 
 ## Documentación de la base de datos
@@ -70,7 +70,7 @@ Además cada tipo de préstamo tiene las siguientes variables:
 
 -   \$ of Loans Originated: El valor total en dólares estadounidenses de los préstamos dados.
 
--   \# of Disbursments: Cantidad de desembolsos.
+-   \# of Disbursements: Cantidad de desembolsos.
 
 -   \$ of Disbursements: Cantidad de dinero desembolsado.
 
@@ -292,7 +292,7 @@ Las instituciones extranjeras con fines de lucro concentran valores muy elevados
 
 Se presentan outliers institucionales que se reflejan en la dispersión de la figura 
 
-![](../../figs/fig_S4_03_scatter.png){fig-align="center" width="100%"}
+![](../../figs/dispercion_log-log.png){fig-align="center" width="100%"}
 
 Algunas universidades, en particular las extranjeras con fines de lucro, aparecen con montos originados desproporcionadamente altos respecto a su número de beneficiarios, lo cual rompe la linealidad del patrón general. La presencia de estos valores extremos es relevante porque las cópulas son especialmente sensibles a la estructura de dependencia en las colas, y unos pocos puntos atípicos pueden alterar la estimación de los coeficientes de dependencia $\lambda_U$ o $\lambda_L$. Por ello, se debe considerar un tratamiento robusto, ya sea mediante la verificación de la influencia de outliers o el uso de cópulas con parámetros flexibles que capten adecuadamente comportamientos extremos.
 
