@@ -1,0 +1,104 @@
+---
+title: "Estructura de Dependencia en Préstamos Estudiantiles"
+subtitle: "Análisis con Cópulas en Universidades Públicas y Privadas"
+author: |
+  Gabriel Sanabria, Diego Vega, Jeikel Navarro, Andy Peralta
+  CA-0307 Estadística Actuarial II
+date: today
+format:
+  beamer-pdf:
+    theme: metropolis
+    colortheme: default
+    slide-level: 2
+    toc: false
+    keep-tex: true
+lang: es
+---
+
+## Objetivo del Estudio
+
+- Analizar la dependencia entre variables de préstamos estudiantiles.
+- Comparar estructuras entre universidades públicas y privadas.
+- Utilizar cópulas para capturar no linealidades y colas extremas.
+
+---
+
+## Datos y Variables
+
+- Base de datos: FFEL 2010 (DOE, EE. UU.)
+- Observaciones: 3793 instituciones
+- Variables clave:
+  - Monto desembolsado
+  - Monto originado
+  - Número de préstamos
+  - Número de beneficiarios
+
+---
+
+## Estimación de distribuciones marginales
+
+- Evaluación de asimetría y curtosis
+- Transformación logarítmica: $\log(1 + x)$
+- Ajuste de distribuciones:
+  - Lognormal, Gamma, t de Student, Johnson SU, etc.
+- Selección por AIC y BIC
+- Aplicación del Probability Integral Transform (PIT)
+
+---
+
+## Diagnóstico del ajuste marginal
+
+![Diagnóstico del PIT para FFEL SUBSIDIZED \$ of Disbursements](../../figs/diagnostico_pit_FFEL_SUBSIDIZED__of_Disbursements_PIT.png){width=90% fig-align="center"}
+
+---
+
+## Cópulas y modelado de dependencia
+
+- Cópulas usadas: Gaussiana, t, Gumbel, Clayton, Frank
+- Método: Pseudo-Máxima Verosimilitud sobre PITs
+- Parámetros estimados:
+  - $\tau$ de Kendall
+  - $\lambda_L$, $\lambda_U$ (colas)
+- Selección por AIC/BIC
+
+---
+
+## Resultados por tipo de institución
+
+- **Públicas**: cópula *Gumbel*
+  - $\lambda_U \approx 0.42$, AIC = 187.3
+- **Privadas**: cópula *Frank*
+  - $\tau \approx 0.35$, AIC = 211.8
+- **Con fines de lucro**:
+  - *t*: $\lambda_L \approx 0.28$, $\lambda_U \approx 0.31$, AIC = 175.6
+
+---
+
+## Ajuste gráfico por tipo de institución
+
+::: {layout-ncol=3}
+
+![Clayton - Con fines de lucro](../../figs/graficos_sprint_4/PRIVATE_t-copula.png){width=100%}
+
+![Gumbel - Públicas](../../figs/graficos_sprint_4/PUBLIC_Gumbel.png){width=100%}
+
+![t - Con fines de lucro](../../figs/graficos_sprint_4/PROPRIETARY_Clayton.png){width=100%}
+
+:::
+
+---
+
+## Conclusiones
+
+- La dependencia varía según el tipo de institución.
+- Las cópulas permiten capturar asimetrías y colas.
+- Los resultados son útiles para:
+  - Gestión del riesgo crediticio
+  - Políticas de financiamiento
+  - Evaluación de equidad en el acceso
+
+---
+
+## Gracias
+
+;)
