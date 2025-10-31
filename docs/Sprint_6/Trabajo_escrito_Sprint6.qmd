@@ -312,6 +312,9 @@ Existe, también, un sesgo asociado al tamaño institucional, ya que el número 
 
 ## Resultados
 
+Los análisis presentados a continuación sintetizan las pruebas estadísticas y evaluaciones realizadas sobre las variables incluidas en el estudio, con el objetivo de verificar los supuestos fundamentales previos a la modelación mediante cópulas. En particular, se examina la normalidad de las distribuciones marginales, la uniformidad de las transformaciones PIT derivadas de los ajustes marginales y la independencia entre dichas transformaciones. Estos resultados permiten validar la pertinencia de emplear modelos de dependencia no lineales y distribuciones con colas pesadas, así como identificar las variables que requieren ajustes adicionales para mejorar la calidad del modelado marginal y la coherencia global del análisis de dependencias.
+
+
 ### Estimación de distribuciones marginales
 
 Como paso previo a la modelación de la dependencia conjunta, se realizó un ajuste de distribuciones marginales para las variables seleccionadas del conjunto de datos, específicamente aquellas relacionadas con los montos desembolsados en programas federales (por ejemplo, FFEL, Direct Loans) y el número de préstamos otorgados. Este paso es fundamental dentro del enfoque de modelado por cópulas, particularmente bajo el esquema conocido como Inference Functions for Margins (IFM), que separa el ajuste de las marginales del modelado de dependencia.
@@ -367,10 +370,8 @@ La forma de las distribuciones observadas, junto con los gráficos de PIT, permi
 
 \newpage
 
-## Resultados
 
 
-Los análisis presentados a continuación sintetizan las pruebas estadísticas y evaluaciones realizadas sobre las variables incluidas en el estudio, con el objetivo de verificar los supuestos fundamentales previos a la modelación mediante cópulas. En particular, se examina la normalidad de las distribuciones marginales, la uniformidad de las transformaciones PIT derivadas de los ajustes marginales y la independencia entre dichas transformaciones. Estos resultados permiten validar la pertinencia de emplear modelos de dependencia no lineales y distribuciones con colas pesadas, así como identificar las variables que requieren ajustes adicionales para mejorar la calidad del modelado marginal y la coherencia global del análisis de dependencias.
 
 ![Cuántiles empíricos vs los cuántiles teóricos](q_empirico_vs_q_teorico.png)
 
@@ -397,34 +398,34 @@ En particular, las variables:
 
 presentaron pruebas de Kolmogorov-Smirnov con valores estadísticos elevados y p-values prácticamente cero, indicando que la uniformidad del PIT no se sostiene bien para ellas.
 
-Para mejorar estas distribuciones marginales se recomienda: explorar transformaciones adicionales más allá de log(1+x), como Box-Cox o funciones específicas para datos con alta asimetría o cola pesada, ajustar distribuciones marginales más flexibles, por ejemplo, mezclas de distribuciones, distribuciones con colas pesadas como distribuciones Gamma generalizadas o Pareto para mejor modelado de montos y desembolsos con alta variabilidad, considerar segmentar el análisis por tipo de universidad o características adicionales para capturar heterogeneidades no modeladas que afectan la uniformidad del PIT y realizar un ajuste iterativo combinando pruebas de bondad de ajuste y validación visual con QQ-plots o histogramas del PIT, para refinar las distribuciones marginales antes de aplicar el cópula definitiva.
+Para mejorar estas distribuciones marginales se recomienda: explorar transformaciones adicionales más allá de $log(1+x)$, como Box-Cox o funciones específicas para datos con alta asimetría o cola pesada, ajustar distribuciones marginales más flexibles, por ejemplo, mezclas de distribuciones, distribuciones con colas pesadas como distribuciones Gamma generalizadas o Pareto para mejor modelado de montos y desembolsos con alta variabilidad, considerar segmentar el análisis por tipo de universidad o características adicionales para capturar heterogeneidades no modeladas que afectan la uniformidad del PIT y realizar un ajuste iterativo combinando pruebas de bondad de ajuste y validación visual con *QQ-plots* o histogramas del PIT, para refinar las distribuciones marginales antes de aplicar el cópula definitiva.
 
 Estas mejoras permitirán obtener una representación marginal más realista y mejorar la validez del análisis de dependencias estructurales entre las variables clave de préstamos estudiantiles.
 
 Ahora, se presentan las visualizaciones asociadas al análisis de dependencia entre las variables transformadas a uniformes. Estas figuras permiten examinar la estructura de correlaciones no paramétricas, la concordancia entre los valores empíricos y los simulados bajo el modelo de cópula ajustado, así como la forma de la densidad conjunta estimada. En conjunto, estos resultados facilitan la validación visual del comportamiento de las dependencias y la pertinencia del modelo seleccionado.
 
 
-![Matriz de correlación de Kendall (τ) entre variables uniformizadas](fig1_tau_copula_heatmap.png)
+![Matriz de correlación de Kendall tau entre variables uniformizadas](fig1_tau_copula_heatmap.png)
 
-La figura 1 muestra la matriz de correlaciones de Kendall (τ) para las variables transformadas a uniformes *Public*, *Private* y *Proprietary*. 
-Los valores en la diagonal son iguales a 1, mientras que las correlaciones cruzadas son cercanas a cero, lo cual indica ausencia de dependencia monótona entre las variables. 
+La figura 1 muestra la matriz de correlaciones de Kendall $(\tau)$ para las variables transformadas a uniformes *Public*, *Private* y *Proprietary*.
+Los valores en la diagonal son iguales a 1, mientras que las correlaciones cruzadas son cercanas a cero, lo cual indica ausencia de dependencia monótona entre las variables.
 El predominio de tonos rojizos neutros confirma que las relaciones son prácticamente independientes, por lo que no se evidencia asociación significativa entre los sectores analizados.
 
 
 ![Comparación entre observaciones empíricas y simuladas bajo el modelo ganador](fig2_emp_vs_sim.png)
 
-Ahora, en la figura compara las pseudo-observaciones empíricas (en azul) y las simuladas (en naranja) obtenidas del modelo de cópula ajustado. 
-Cada panel representa un par de variables: *Public–Private*, *Public–Proprietary* y *Private–Proprietary*. 
-Las distribuciones de puntos son dispersas y homogéneas, sin patrones de alineamiento ni concentración, lo que sugiere independencia entre los pares. 
+Ahora, en la figura compara las pseudo-observaciones empíricas (en azul) y las simuladas (en naranja) obtenidas del modelo de cópula ajustado.
+Cada panel representa un par de variables: *Public–Private*, *Public–Proprietary* y *Private–Proprietary*.
+Las distribuciones de puntos son dispersas y homogéneas, sin patrones de alineamiento ni concentración, lo que sugiere independencia entre los pares.
 El solapamiento visual entre los datos empíricos y simulados indica que el modelo reproduce adecuadamente la estructura de independencia observada en los datos reales.
 
 
 ![Densidad estimada de la cópula gaussiana (slice Private = 0.5)](fig3_contour_top_pair.png)
 
 
-El gráfico muestra el mapa de densidad de la cópula gaussiana ajustada, evaluada para una sección donde la variable *Private* se fija en $0.5$. 
-Los ejes representan las coordenadas uniformes de *Public* y *Proprietary*, y los colores indican la densidad conjunta $c(u)$. 
-La superficie es casi constante, con valores entre aproximadamente $0.3$ y $2.4$, lo cual refleja una dependencia débil o nula entre las variables. 
+El gráfico muestra el mapa de densidad de la cópula gaussiana ajustada, evaluada para una sección donde la variable *Private* se fija en $0.5$.
+Los ejes representan las coordenadas uniformes de *Public* y *Proprietary*, y los colores indican la densidad conjunta $c(u)$.
+La superficie es casi constante, con valores entre aproximadamente $0.3$ y $2.4$, lo cual refleja una dependencia débil o nula entre las variables.
 Este resultado es coherente con los valores de τ cercanos a cero y confirma la independencia práctica en la estructura de dependencia modelada.
 
 
