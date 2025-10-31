@@ -1,0 +1,32 @@
+---
+title: "Sprint6_Roberto"
+format: html
+---
+
+# Resultados del diagnóstico
+
+## Normalidad de distribuciones marginales
+
+Se aplicaron las pruebas de Shapiro-Wilk, Kolmogorov-Smirnov y Jarque-Bera tanto a las variables originales como a sus transformaciones logarítmicas log(1+x). Los resultados indican que en la escala original, los valores p son extremadamente pequeños (muy cercanos a cero), lo que implica que se rechaza contundentemente el supuesto de normalidad para todas las variables estudiadas, incluyendo número de beneficiarios, montos originados y desembolsados. Al aplicar la transformación logarítmica, aunque algunas variables muestran una mejora en la aproximación a la normalidad, en general los valores p siguen siendo muy bajos, lo que confirma que la normalidad no se cumple estrictamente. Esto justifica el uso de distribuciones marginales no gaussianas, como las distribuciones t o gamma, en la construcción de las cópulas para modelar las dependencias entre variables.
+
+## Uniformidad del PIT
+
+Para evaluar si las funciones marginales estimadas son correctas, se aplicaron pruebas de uniformidad (Kolmogorov-Smirnov y Chi-cuadrado) sobre los valores transformados PIT ($$u_i = F_i(x_i)$$), que deberían seguir una distribución uniforme en el intervalo si el ajuste marginal es adecuado. Los resultados presentan algunos valores p bajos (significativos), indicando en ciertos casos desviaciones de la uniformidad especialmente en algunas variables, aunque para otras la uniformidad no se rechaza completamente. Esto sugiere que el ajuste marginal es razonablemente bueno para la mayoría de las variables, pero podría mejorarse en algunas distribuciones marginales específicas.
+
+## Independencia del PIT
+
+Se realizaron pruebas de independencia entre los valores PIT de pares de variables mediante la prueba Chi-cuadrado y la correlación de Spearman. Los resultados muestran estadísticas con valores de p cercanos a cero, lo que implica que se rechaza la hipótesis de independencia entre los PIT de diferentes variables. Esto es esperable y deseable en un análisis de dependencias utilizando cópulas, ya que significa que existen dependencias estructurales significativas entre las variables transformadas, es decir, los patrones de crédito educativo en universidades públicas y privadas exhiben relaciones estadísticamente significativas entre número de préstamos, montos y beneficiarios.
+
+Algunas distribuciones marginales que podrían mejorarse son principalmente las relacionadas con las variables de desembolsos y préstamos debido a que en las pruebas de uniformidad del PIT (Probability Integral Transform) se observaron valores p muy bajos, que indican desviaciones significativas de la uniformidad esperada para un ajuste marginal adecuado.
+
+En particular, las variables:
+- FFEL PARENT PLUS # of Disbursements_PIT
+- FFEL PARENT PLUS $ of Disbursements_PIT
+- FFEL GRAD PLUS # of Disbursements_PIT
+- FFEL GRAD PLUS $ of Disbursements_PIT
+
+presentaron pruebas de Kolmogorov-Smirnov con valores estadísticos elevados y p-values prácticamente cero, indicando que la uniformidad del PIT no se sostiene bien para ellas.
+
+Para mejorar estas distribuciones marginales se recomienda: explorar transformaciones adicionales más allá de log(1+x), como Box-Cox o funciones específicas para datos con alta asimetría o cola pesada, ajustar distribuciones marginales más flexibles, por ejemplo, mezclas de distribuciones, distribuciones con colas pesadas como distribuciones Gamma generalizadas o Pareto para mejor modelado de montos y desembolsos con alta variabilidad, considerar segmentar el análisis por tipo de universidad o características adicionales para capturar heterogeneidades no modeladas que afectan la uniformidad del PIT y realizar un ajuste iterativo combinando pruebas de bondad de ajuste y validación visual con QQ-plots o histogramas del PIT, para refinar las distribuciones marginales antes de aplicar el cópula definitiva.
+
+Estas mejoras permitirán obtener una representación marginal más realista y mejorar la validez del análisis de dependencias estructurales entre las variables clave de préstamos estudiantiles.
