@@ -406,25 +406,25 @@ Ahora, se presentan las visualizaciones asociadas al análisis de dependencia en
 
 ![Matriz de correlación de Kendall (τ) entre variables uniformizadas](fig1_tau_copula_heatmap.png)
 
-La figura 1 muestra la matriz de correlaciones de Kendall (τ) para las variables transformadas a uniformes *Public*, *Private* y *Proprietary*. 
-Los valores en la diagonal son iguales a 1, mientras que las correlaciones cruzadas son cercanas a cero, lo cual indica ausencia de dependencia monótona entre las variables. 
+La figura 1 muestra la matriz de correlaciones de Kendall (τ) para las variables transformadas a uniformes *Public*, *Private* y *Proprietary*.
+Los valores en la diagonal son iguales a 1, mientras que las correlaciones cruzadas son cercanas a cero, lo cual indica ausencia de dependencia monótona entre las variables.
 El predominio de tonos rojizos neutros confirma que las relaciones son prácticamente independientes, por lo que no se evidencia asociación significativa entre los sectores analizados.
 
 
 ![Comparación entre observaciones empíricas y simuladas bajo el modelo ganador](fig2_emp_vs_sim.png)
 
-Ahora, en la figura compara las pseudo-observaciones empíricas (en azul) y las simuladas (en naranja) obtenidas del modelo de cópula ajustado. 
-Cada panel representa un par de variables: *Public–Private*, *Public–Proprietary* y *Private–Proprietary*. 
-Las distribuciones de puntos son dispersas y homogéneas, sin patrones de alineamiento ni concentración, lo que sugiere independencia entre los pares. 
+Ahora, en la figura compara las pseudo-observaciones empíricas (en azul) y las simuladas (en naranja) obtenidas del modelo de cópula ajustado.
+Cada panel representa un par de variables: *Public–Private*, *Public–Proprietary* y *Private–Proprietary*.
+Las distribuciones de puntos son dispersas y homogéneas, sin patrones de alineamiento ni concentración, lo que sugiere independencia entre los pares.
 El solapamiento visual entre los datos empíricos y simulados indica que el modelo reproduce adecuadamente la estructura de independencia observada en los datos reales.
 
 
 ![Densidad estimada de la cópula gaussiana (slice Private = 0.5)](fig3_contour_top_pair.png)
 
 
-El gráfico muestra el mapa de densidad de la cópula gaussiana ajustada, evaluada para una sección donde la variable *Private* se fija en $0.5$. 
-Los ejes representan las coordenadas uniformes de *Public* y *Proprietary*, y los colores indican la densidad conjunta $c(u)$. 
-La superficie es casi constante, con valores entre aproximadamente $0.3$ y $2.4$, lo cual refleja una dependencia débil o nula entre las variables. 
+El gráfico muestra el mapa de densidad de la cópula gaussiana ajustada, evaluada para una sección donde la variable *Private* se fija en $0.5$.
+Los ejes representan las coordenadas uniformes de *Public* y *Proprietary*, y los colores indican la densidad conjunta $c(u)$.
+La superficie es casi constante, con valores entre aproximadamente $0.3$ y $2.4$, lo cual refleja una dependencia débil o nula entre las variables.
 Este resultado es coherente con los valores de τ cercanos a cero y confirma la independencia práctica en la estructura de dependencia modelada.
 
 
