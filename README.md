@@ -1,7 +1,3 @@
-# Plantilla para el proyecto de Estadística Actuarial II (CA-307)
+# Comparación de la estructura de dependencia entre variables de préstamos estudiantiles mediante cópulas
 
-## Instrucciones
-
-1. Clona este repositorio en tu máquina local.
-1. Instala `uv` (https://docs.astral.sh/uv/getting-started/installation/) y luego ejecute el comando `uv sync` en la raíz del proyecto.
-1. Luego ejecuta el comando `pre-commit install --install-hooks` para instalar los hooks de pre-commit.
+Este proyecto analiza la estructura de dependencia entre variables asociadas a los préstamos estudiantiles en universidades de Estados Unidos, utilizando modelos de cópulas. El objetivo es comparar el comportamiento estadístico de instituciones públicas y privadas, identificando relaciones no lineales y dependencias en las colas que no son capturadas adecuadamente por medidas tradicionales de correlación. El análisis se basa en datos del programa Federal Family Education Loan (FFEL) correspondientes al año 2010 y aplica técnicas de ajuste marginal, transformación PIT y selección de cópulas desde un enfoque de Estadística Actuarial.
