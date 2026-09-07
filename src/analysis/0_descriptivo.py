@@ -1,7 +1,7 @@
 # Cálculos de análisis descriptivo
 
-import pandas as pd
 import numpy as np
+import pandas as pd
 
 df = pd.read_csv("data/clean/dashboard_2010_clean.csv")
 
