@@ -2,32 +2,33 @@
 
 import argparse
 from pathlib import Path
+
 import matplotlib.pyplot as plt
 
 # Asegúrate de que este script se ejecute desde el nivel del proyecto
 # y que el módulo plots esté en el mismo paquete src.viz
 from plots import (
     load_dashboard_csv,
-    split_public_private,
-    plot_hist_subsidized_public,
+    plot_correlation_heatmap_kendall,
+    plot_correlation_heatmap_pearson,
+    plot_correlation_heatmap_spearman,
+    plot_distribution_by_institution_type,
     plot_hist_subsidized_private,
-    plot_hist_unsubsidized_public,
+    plot_hist_subsidized_public,
     plot_hist_unsubsidized_private,
-    plot_total_subsidized_vs_unsubsidized,
-    plot_loan_distribution_by_school_type,
-    plot_scatter_recipients_vs_amount,
-    plot_top_states_by_subsidized_loans,
-    plot_log_hist_unsubsidized_public,
-    plot_log_hist_subsidized_private,
-    plot_log_hist_subsidized_public,
+    plot_hist_unsubsidized_public,
     plot_institutions_by_state,
     plot_institutions_by_type,
-    plot_scatter_subsidized_vs_disbursements,
-    plot_distribution_by_institution_type,
+    plot_loan_distribution_by_school_type,
+    plot_log_hist_subsidized_private,
+    plot_log_hist_subsidized_public,
+    plot_log_hist_unsubsidized_public,
     plot_scatter_log_recipients_vs_originated,
-    plot_correlation_heatmap_pearson,
-    plot_correlation_heatmap_kendall,
-    plot_correlation_heatmap_spearman,
+    plot_scatter_recipients_vs_amount,
+    plot_scatter_subsidized_vs_disbursements,
+    plot_top_states_by_subsidized_loans,
+    plot_total_subsidized_vs_unsubsidized,
+    split_public_private,
 )
 
 
