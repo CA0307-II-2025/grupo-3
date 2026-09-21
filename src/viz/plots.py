@@ -1,8 +1,8 @@
 # Generación de gráficos (histogramas, dispersión, etc.)
 # src/viz/plots.py
-import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
 
 def load_dashboard_csv(filepath):
