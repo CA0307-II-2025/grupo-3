@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 modeling.py — Validación e Inferencia (👤 Persona 3)
 
@@ -22,16 +21,15 @@ Funciones principales:
 Autor: Persona 3 — Validación e Inferencia
 """
 
-from pathlib import Path
 import glob
+from pathlib import Path
+
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-from typing import Dict, List, Tuple, Optional
-
-from scipy import stats
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
+from scipy import stats
 
 # =========================
 # 0) Carga de datos
@@ -41,7 +39,7 @@ import statsmodels.formula.api as smf
 def load_dataset_from_dir(
     dir_path: str = r"data/clean",
     pattern: str = "*.csv",
-    index_col: Optional[str] = None,
+    index_col: str | None = None,
 ) -> pd.DataFrame:
     """
     Lee todos los CSV de un directorio y los concatena.
@@ -101,7 +99,7 @@ def fit_model(
 # =========================
 
 
-def compute_metrics(results) -> Dict[str, float]:
+def compute_metrics(results) -> dict[str, float]:
     """
     Calcula LogLik, AIC, BIC desde el objeto de resultados de statsmodels.
     """
@@ -127,7 +125,7 @@ def compute_metrics(results) -> Dict[str, float]:
 
 def _get_predictions_and_residuals(
     results, df: pd.DataFrame
-) -> Tuple[np.ndarray, np.ndarray]:
+) -> tuple[np.ndarray, np.ndarray]:
     """
     Devuelve y_hat y residuos (y - y_hat) compatible con OLS y Logit.
     Para Logit, usa la probabilidad predicha (para gráficos).
@@ -203,11 +201,11 @@ def infer_params(results) -> pd.DataFrame:
 
 def dependence_by_group(
     df: pd.DataFrame,
-    cols: List[str],
+    cols: list[str],
     group_col: str,
-    groups: Tuple[str, str] = ("PUBLIC", "PRIVATE"),
+    groups: tuple[str, str] = ("PUBLIC", "PRIVATE"),
     method: str = "pearson",
-) -> Dict[str, pd.DataFrame]:
+) -> dict[str, pd.DataFrame]:
     """
     Calcula matrices de correlación por grupo para columnas numéricas.
     """
@@ -237,11 +235,11 @@ def compare_dependence_diff(
     x_col: str,
     y_col: str,
     group_col: str,
-    groups: Tuple[str, str] = ("PUBLIC", "PRIVATE"),
+    groups: tuple[str, str] = ("PUBLIC", "PRIVATE"),
     method: str = "pearson",
     n_boot: int = 2000,
-    random_state: Optional[int] = 123,
-) -> Dict[str, float]:
+    random_state: int | None = 123,
+) -> dict[str, float]:
     """
     Compara la dependencia (correlación) entre dos grupos y estima un IC95% por bootstrap.
     """
@@ -285,10 +283,10 @@ def compare_dependence_diff(
 
 def evaluate_models_across_groups(
     df: pd.DataFrame,
-    formulas: Dict[str, str],
+    formulas: dict[str, str],
     family: str,
     group_col: str,
-    groups: Tuple[str, str] = ("PUBLIC", "PRIVATE"),
+    groups: tuple[str, str] = ("PUBLIC", "PRIVATE"),
     diag_plots: bool = True,
 ) -> pd.DataFrame:
     """
