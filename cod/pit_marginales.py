@@ -6,12 +6,14 @@
 #   python cod/pit_marginales.py --csv data/clean/dashboard_2010_clean.csv --col disbursed
 
 from __future__ import annotations
+
 import argparse
-from pathlib import Path
 import sys
+from pathlib import Path
+
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 from scipy import stats
 
 SEED = 123
