@@ -1,5 +1,5 @@
-import pandas as pd
 import numpy as np
+import pandas as pd
 
 df = pd.read_csv(r"data/clean/dashboard_2010_clean.csv")
 print(df.head())
