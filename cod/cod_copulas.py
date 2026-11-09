@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Created on Thu Oct 30 16:43:03 2025
 
@@ -7,15 +6,15 @@ Created on Thu Oct 30 16:43:03 2025
 
 import os
 import re
-import pandas as pd
-import numpy as np
-import scipy.stats as st
-from scipy.stats import skew, kurtosis
 import warnings
+
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import scipy.stats as st
 import seaborn as sns
-from scipy.stats import multivariate_normal
 from scipy.special import gammaln
+from scipy.stats import kurtosis, multivariate_normal, skew
 
 
 def resumen_disbursements(df_filtrado, tipo_col="School Type"):
@@ -629,12 +628,10 @@ def generate_copula_report(
                     "rho_model": np.nan,
                     "lambda_L": np.nan,
                     "lambda_U": np.nan,
-                    **{
-                        "P12": jp["P12"],
-                        "P13": jp["P13"],
-                        "P23": jp["P23"],
-                        "P123": jp["P123"],
-                    },
+                    "P12": jp["P12"],
+                    "P13": jp["P13"],
+                    "P23": jp["P23"],
+                    "P123": jp["P123"],
                 },
             ]
         )
