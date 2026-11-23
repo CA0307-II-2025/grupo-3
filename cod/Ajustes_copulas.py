@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Created on Thu Nov 27 09:55:37 2025
 
@@ -7,16 +6,15 @@ Created on Thu Nov 27 09:55:37 2025
 
 # cod/copulas_auto.py (o dentro de cod_copulas.py)
 
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-
 from statsmodels.distributions.copula.api import (
-    GaussianCopula,
-    StudentTCopula,
     ClaytonCopula,
-    GumbelCopula,
     FrankCopula,
+    GaussianCopula,
+    GumbelCopula,
+    StudentTCopula,
 )
 
 # ---------------------------------------------------------
